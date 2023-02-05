@@ -1,0 +1,5 @@
+<h1>レシピ一覧</h1>
+<% @recipes.each do |recipe| %>
+  <%= attachment_image_tag recipe, :image, format: 'jpeg', size: '100x100' %>
+  <span><%= link_to recipe.title, recipe_path(recipe) %></span>
+<% end %>
