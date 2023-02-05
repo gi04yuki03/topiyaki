@@ -2,6 +2,8 @@
 <%= form_with model: @recipe, local:true do |f| %>
   <h4>アレンジ名</h4>
   <%= f.text_field :title %>
+  <h4>画像</h4>
+  <%= f.attachment_field :image %>
   <h4>作り方</h4>
   <%= f.text_area :description %>
   <%= f.submit '投稿' %>
