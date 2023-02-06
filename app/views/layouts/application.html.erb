@@ -4,12 +4,24 @@
     <title>Recipeapp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name=”viewport” content=”width=device-width,initial-scale=1″>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- drawer.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- jquery & iScroll -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+<!-- drawer.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="wrapper">
+      <%= render "shared/header" %>
+        <%= yield %>
+      <%= render "shared/footer" %>
+    </div>
   </body>
 </html>
