@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :recipes
   resources :users, only:[:show, :edit]
+  resource :favorites, only:[:create, :destroy]
 end
