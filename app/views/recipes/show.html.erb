@@ -1,6 +1,17 @@
-<%= attachment_image_tag @recipe, :image, format: 'jpeg' %>
-<h2>アレンジ名</h2>
-<p><%= @recipe.title %></p>
-<h2>作り方</h2>
-<p><%= @recipe.description %></p>
-<%= link_to '戻る', :back %>
+<div class="container">
+  <h1><%= @recipe.title %></h1>
+    <div class="show-recipe">
+      <div class="top-show">
+        <div class="recipe-image">
+          <%= attachment_image_tag @recipe, :image, format: 'jpeg' %>
+        </div>
+        <div class="recipe-description">
+          <p><%= @recipe.description %></p>
+        </div>
+      </div>
+    </div>
+  <%= link_to '編集する', edit_recipe_path(@recipe.id) %>
+  <%= link_to '削除する', recipe_path(@recipe.id), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+  <%= link_to '戻る', :back %>
+</div>
+<%= render "shared/expand_less" %>

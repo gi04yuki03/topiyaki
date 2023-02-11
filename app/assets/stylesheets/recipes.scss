@@ -35,10 +35,6 @@
   color: #333;
 }
 
-.recipes-item:hover {
-  opacity: 0.8;
-}
-
 /*--------------------------------
  recipes/new
 ---------------------------------*/
@@ -74,3 +70,35 @@
 .new-recipe table {
   width: 80%;
 }
+
+/*--------------------------------
+ recipes/show
+---------------------------------*/
+.show-recipe {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  margin: 20px 0;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 20px 40px;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.top-show {
+  display: flex;
+}
+
+.recipe-image {
+  width: 30%;
+  min-height: 50px;
+}
+
+.recipe-description {
+  width: 70%;
+  text-align: center;
+}
+
