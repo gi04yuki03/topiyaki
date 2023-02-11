@@ -1,3 +1,41 @@
-// Place all the styles related to the recipes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*--------------------------------
+ recipes/index
+---------------------------------*/
+.recipes-list {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 30px 20px;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.list-preview {
+  display: flex;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.list-image {
+  border-radius: 4px;
+}
+
+.list-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.list-text h3 {
+  font-weight: bold;
+}
+
+.recipes-item {
+  width: 100%;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.recipes-item:hover {
+  opacity: 0.8;
+}
+

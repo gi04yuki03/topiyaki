@@ -1,5 +1,21 @@
-<h1>レシピ一覧</h1>
-<% @recipes.each do |recipe| %>
-  <%= attachment_image_tag recipe, :image, format: 'jpeg', size: '100x100' %>
-  <span><%= link_to recipe.title, recipe_path(recipe) %></span>
-<% end %>
+<div class="container">
+  <div class="container">
+    <h1>レシピ一覧</h1>
+    <ul class="recipes-list">
+      <% @recipes.each do |recipe| %>
+        <%= link_to recipe_path(recipe), class: 'recipes-item' do %>
+          <li class="list-preview">
+            <div>
+              <%= attachment_image_tag recipe, :image, format: 'jpeg', size: '200x200', class: 'list-image' %>
+            </div>
+            <div class="list-text">
+              <h3 class="recipe-name"><%= recipe.title %></h3>
+              <h5 class="recipe-info"><%= recipe.description %></h5>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "shared/expand_less" %>
