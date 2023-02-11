@@ -1,0 +1,22 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー 
+      recipe: レシピ
+    # model毎に定義したいattributesを記述
+    attributes:
+        user:
+          name: 名前
+          last_name: 姓
+          email: メールアドレス
+          image: プロフィール画像
+          password: パスワード
+        recipe:
+          title: 料理名
+          image: 写真
+          description: 説明
+  # 全てのmodelで共通して使用するattributesを定義
+  attributes:
+    created_at: 作成日
+    updated_at: 更新日
+    id: ID
