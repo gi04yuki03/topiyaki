@@ -20,4 +20,7 @@
 
 $(document).on ("turbolinks:load", function() {
   $('.drawer').drawer();
+  $('.drawer-nav').on('click', function() {
+    $('.drawer').drawer('close');
+  });
 });
