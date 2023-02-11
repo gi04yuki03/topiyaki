@@ -39,3 +39,38 @@
   opacity: 0.8;
 }
 
+/*--------------------------------
+ recipes/new
+---------------------------------*/
+.new-recipe {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  margin: 20px 0;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 20px 40px;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.new-recipe th {
+  padding: 0 30px;
+  width: 40%;
+  font-size: 125%
+}
+
+.new-recipe td {
+  width: 60%;
+  padding: 0 30px;
+}
+
+.new-title, .new-description, .new-image {
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.new-recipe table {
+  width: 80%;
+}
