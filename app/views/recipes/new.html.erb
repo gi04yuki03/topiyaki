@@ -1,5 +1,6 @@
 <h1>新規レシピ投稿</h1>
 <%= form_with model: @recipe, local:true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
   <h4>アレンジ名</h4>
   <%= f.text_field :title %>
   <h4>画像</h4>
