@@ -3,7 +3,11 @@
     <div class="show-recipe">
       <div class="top-show">
         <div class="recipe-image">
-          <%= attachment_image_tag @recipe, :image, format: 'jpeg' %>
+          <% if @recipe.image.present? %>
+            <%= attachment_image_tag @recipe, :image, format: 'jpeg' %>
+          <% else %>
+            <%= image_tag 'no_image.jpg'%>
+          <% end %>
         </div>
         <div class="recipe-description">
           <p><%= @recipe.description %></p>
