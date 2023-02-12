@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root :to => 'homes#top'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :recipes
-  resources :users, only:[:show, :edit]
+  resources :users, only:[:show, :edit, :destroy]
   resource :favorites, only:[:create, :destroy]
 end
