@@ -1,0 +1,11 @@
+<div class="favorite">
+  <% if recipe.favorited_by?(current_user) %>
+    <%= link_to recipe_favorite_path(recipe), method: :delete, class: "favorite_btn" do %>
+      <p>♥<%= recipe.favorites.count %> いいね</p>
+    <% end %>
+  <% else %>
+    <%= link_to recipe_favorites_path(recipe), method: :post, class: "favorite_btn" do %>
+      <p>♡<%= recipe.favorites.count %> いいね</p>
+    <% end %>
+  <% end %>
+</div>
