@@ -9,6 +9,17 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def posted
+    @user = current_user
+    @recipes = @user.recipes
+  end
+
+  def favorites
+    @user = current_user
+    favorites = Favorite.where(user_id: @user.id).pluck(:recipe_id)
+    @recipes = Recipe.find(favorites)
+  end
+
   def destroy
     @user = Recipe.find(params[:id])
     @user.destroy
