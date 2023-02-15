@@ -17,13 +17,13 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 85vh;
+  min-height: 85vh;
   text-align: center;
 }
 
 .box1 {
   width: 480px;
-  height: 550px;
+  min-height: 550px;
   border-radius: 6px;
   border: 1px #e2e2e2 solid;
   margin: 60px auto;
@@ -31,9 +31,9 @@ h4 {
 
 .box2 {
   width: 480px;
-  height: 410px;
+  min-height: 410px;
   border-radius: 6px;
-  border: 1px #ddd solid;
+  border: 1px #e2e2e2 solid;
   margin: 60px auto;
 }
 

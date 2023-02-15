@@ -35,6 +35,11 @@ ul {
   display: none;
 }
 
+.notice {
+  background-color: gray;
+  color: white;
+  text-align: center;
+}
 
 /*--------------------------------
  レイアウト
@@ -63,6 +68,14 @@ ul {
   max-width: 1340px;
   margin: 0 auto;
   padding: 0 40px;
+}
+
+.alert {
+  padding: 5px 5px !important;
+}
+
+.alert ul {
+  margin-bottom: 0;
 }
 
 /*--------------------------------

@@ -1,41 +1,40 @@
-<main class="content">
 <div class="box">
-<div class="box2">
-  <div class="box-inner">
-    <%= form_with model: @user, url: user_session_path, local: true do |f| %>
-    <h4>ログイン</h4>
-    <div class="box-email">
-      <%= f.label :email, "メールアドレス" %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "必須" %>
-    </div>
-    <div class="box-password">
-      <div class="a-row">
-        <div class="column-left">
-          <%= f.label :password, "パスワード" %>
+  <div class="box2">
+    <div class="box-inner">
+      <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+        <%= render "devise/shared/error_messages", resource: @user %>
+        <h4>ログイン</h4>
+        <div class="box-email">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "必須" %>
         </div>
-        <div class="column-right">
-          <%= link_to "パスワードを忘れた場合", new_user_password_path %>
+        <div class="box-password">
+          <div class="a-row">
+            <div class="column-left">
+              <%= f.label :password, "パスワード" %>
+            </div>
+            <div class="column-right">
+              <%= link_to "パスワードを忘れた場合", new_user_password_path %>
+            </div>
+          </div>
+          <%= f.password_field :password, autocomplete: "current-password", placeholder: "必須" %>
         </div>
-      </div>
-      <%= f.password_field :password, autocomplete: "current-password", placeholder: "必須" %>
-    </div>
-    <div class="box2-login">
-      <%= f.submit "ログイン" %>
-    </div>
-    <div>
-      <% if devise_mapping.rememberable? %>
-      <div class="remember">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember, "ログインしたままにする" %>
-      </div>
+        <div class="box2-login">
+          <%= f.submit "ログイン" %>
+        </div>
+        <div>
+          <% if devise_mapping.rememberable? %>
+            <div class="remember">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember, "ログインしたままにする" %>
+            </div>
+          <% end %>
+        </div>
       <% end %>
-    </div>
-    <% end %>
-
-    <div>
-      <%= link_to "新しいアカウントを作成", new_user_registration_path %>
+      <div>
+        <%= link_to "新しいアカウントを作成", new_user_registration_path %>
+      </div>
     </div>
   </div>
-  </div>
-</main>
+</div>
 

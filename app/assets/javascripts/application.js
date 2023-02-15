@@ -24,3 +24,7 @@ $(document).on ("turbolinks:load", function() {
     $('.drawer').drawer('close');
   });
 });
+
+$(function(){
+  setTimeout("$('.notice').fadeOut('slow')", 1000);
+  });
