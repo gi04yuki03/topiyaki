@@ -1,9 +1,21 @@
 <!-- header -->
 <header class="header">
-  <h1 class="header-logo">
-    <%= image_tag 'logo.png', size: "50x50", alt: "アイコン" %>
-  </h1>
-  <nav class="drawer drawer--right gnav">
+  <div class ="header-logo">
+    <%= link_to root_path do %>
+      <%= image_tag 'logo.png', alt: "アイコン" %>
+    <% end %>
+  </div>
+
+  <nav>
+    <div class="nav-login">
+      <%= link_to new_user_registration_path do %>
+        <h2 class="btn">新規登録</h2>
+      <% end %>
+      <%= link_to new_user_session_path do %>
+        <h2 class="btn">ログイン</h2>
+      <% end %>
+    </div>
+  <div class="drawer drawer--right gnav">
     <button type="button" class="drawer-toggle drawer-hamburger">
       <span class="sr-only">toggle navigation</span>
       <span class="drawer-hamburger-icon"></span>
@@ -11,15 +23,19 @@
     <div class="drawer-nav" role="navigation">
       <ul class="drawer-menu">
         <li class="drawer-brand">
-          <%= link_to "レシピ登録", new_recipe_path %>
+          <%= link_to "レシピ一覧", recipes_path %>
         </li>
         <li class="drawer-brand">
           <%= link_to "レシピ登録", new_recipe_path %>
         </li>
         <li class="drawer-brand">
-          <%= link_to "レシピ登録", new_recipe_path %>
+          <%= link_to "マイページ", user_path(current_user.id) %>
+        </li>
+        <li class="drawer-brand">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         </li>
       </ul>
+    </div>
     </div>
   </nav>
 </header>

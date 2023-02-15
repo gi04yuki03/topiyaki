@@ -11,6 +11,11 @@ a {
   color: #1ca9e3;
 }
 
+a:hover {
+  opacity: 0.7;
+  text-decoration: none!important;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -18,6 +23,9 @@ img {
   border-style: none;
 }
 
+ul {
+  list-style: none;
+}
 
 .pc-only {
   display: block;
@@ -27,11 +35,12 @@ img {
   display: none;
 }
 
+
 /*--------------------------------
  レイアウト
 ---------------------------------*/
 .wrapper {
-  padding-top: 73px;
+  padding-top: 60px;
 }
 
 .section {
@@ -43,28 +52,24 @@ img {
 }
 
 .container {
+  height: 85vh;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 15px 40px;
+}
+
+.center-box {
+  height: 85vh;
   max-width: 1340px;
   margin: 0 auto;
   padding: 0 40px;
 }
 
 /*--------------------------------
- 見出し
+ フォント
 ---------------------------------*/
-.title {
-  font-size: 34px;
-  font-weight: bold;
-  line-height: 1;
-  margin-bottom: 40px;
-  text-align: center;
-  letter-spacing: .05em;
-  color: #333;
-}
-
-.lead {
-  font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 30px;
+h1 {
+  margin-top: 10px;
 }
 
 /*--------------------------------
@@ -77,213 +82,27 @@ img {
   width: 100%;
   background-color: #fff;
   box-shadow: 0 5px 10px -6px rgba(0,0,0,.1);
-  padding: 0 40px;
-}
-
-.header .container {
+  padding: 0 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.gnav-list {
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-  padding: 20px 0;
+.header-logo img {
+  width: 110px;
+  height: 60px;
+  object-fit: cover; 
 }
 
-.gnav-item:not(:last-child) {
-  margin-right: 20px;
-}
-
-.gnav-item a {
-  position: relative;
-  font-size: 13px;
-  font-weight: bold;
-  display: inline-block;
-  padding: 5px 0;
-  transition: .3s;
-  letter-spacing: .05em;
-  color: #333;
-}
-.gnav-item a:after {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 3px;
-  content: "";
-  transition: .3s;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  background-color: #333;
-}
-
-.gnav-item a:hover:after {
-  width: 100%;
-}
-
-/*--------------------------------
- メインビジュアル
----------------------------------*/
-.box {
-  height: 78vh;
-  text-align: center;
-}
-
-.mv {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 85vh;
-  text-align: center;
-}
-
-.mv-container {
-  padding: 0 40px;
-}
-
-.mv-title {
-  font-size: 60px;
-  font-weight: bold;
-  line-height: 1.2;
-  margin-bottom: 5px;
-  letter-spacing: .1em;
-}
-.mv-subtitle {
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 1;
-  margin-bottom: 40px;
-  letter-spacing: .08em;
-}
-
-.mv-text {
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-/*--------------------------------
- Works
----------------------------------*/
-.works-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: -40px;
-}
-
-.works-item {
-  width: 31.74603%;
-  margin-right: 1.58730%;
-  margin-bottom: 40px;
-  color: #333;
-}
-
-.works-item:hover {
-  opacity: .9;
-}
-
-.works-item:nth-of-type(3n) {
-  margin-right: 0;
-}
-
-.works-img img {
-  border: 1px solid #e6e6e6;
-}
-
-.works-name {
-  font-size: 12px;
-  font-weight: bold;
-  margin-top: 8px;
-}
-
-.works-info {
-  font-size: 10px;
-  margin-top: 5px;
-}
-
-/*--------------------------------
- Skill
----------------------------------*/
-.skill-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: -50px;
-}
-
-.skill-item {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 48%;
-  margin-bottom: 50px;
-}
-
-.skill-img {
-  width: 60px;
-  height: auto;
-  margin-right: 20px;
-}
-
-.skill-body {
-  flex: 1;
-}
-
-.skill-name {
-  margin-bottom: 10px;
-}
-
-.skill-text {
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-/*--------------------------------
- About
----------------------------------*/
-.profile {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 800px;
-  margin: 0 auto;
-}
-.profile-img {
-  width: 20%;
+.nav-login {
   margin-right: 30px;
-  border-radius: 50%;
 }
-.profile-img img {
-  border-radius: 50%;
-}
-.profile-body {
-  flex: 1;
+.nav-login h2 {
+  margin-bottom: 0;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
 }
 
-.profile-body p {
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-.profile-body p:not(:last-child) {
-  margin-bottom: 30px;
-}
-
-/*--------------------------------
- Contact
----------------------------------*/
-.contact {
-  text-align: center;
-}
-
-.contact-item:not(:last-child) {
-  margin-right: 10px;
-}
-
-.contact-text {
-  margin-top: 10px;
-}
 /*--------------------------------
  ページトップ
 ---------------------------------*/
@@ -312,62 +131,6 @@ img {
   font-size: 10px;
   text-align: center;
   color: #797979;
-}
-
-/*--------------------------------
- 下層：Worksページ
----------------------------------*/
-.article {
-  padding: 80px 0;
-}
-
-.article-container {
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.article-title {
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.article-body {
-  max-width: 720px;
-  margin: 0 auto;
-  margin-bottom: 80px;
-}
-
-.article-body h3 {
-  position: relative;
-  font-size: 18px;
-  margin-bottom: 5px;
-  padding-left: 1em;
-}
-
-.article-body h3:not(:first-child) {
-  margin-top: 50px;
-}
-
-.article-body h3::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  content: "";
-  border-radius: 3px;
-  background-color: #333;
-}
-
-.article-body p {
-  font-size: 15px;
-  line-height: 1.8;
-  margin-bottom: 30px;
-}
-
-.home-link {
-  text-align: center;
 }
 
 /*media Queries 767
@@ -399,7 +162,7 @@ img {
 
   /* レイアウト */
   .wrapper {
-    padding-top: 57px;
+    padding-top: 60px;
   }
 
   .section {
