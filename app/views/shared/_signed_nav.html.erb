@@ -1,0 +1,22 @@
+<div class="drawer drawer--right">
+  <button type="button" class="drawer-toggle drawer-hamburger">
+    <span class="sr-only">toggle navigation</span>
+    <span class="drawer-hamburger-icon"></span>
+  </button>
+  <div class="drawer-nav" role="navigation">
+    <ul class="drawer-menu">
+      <li class="drawer-brand">
+        <%= link_to "レシピ一覧", recipes_path %>
+      </li>
+      <li class="drawer-brand">
+        <%= link_to "レシピ登録", new_recipe_path %>
+      </li>
+      <li class="drawer-brand">
+        <%= link_to "マイページ", user_path(current_user.id) %>
+      </li>
+      <li class="drawer-brand">
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </li>
+    </ul>
+  </div>
+</div>
