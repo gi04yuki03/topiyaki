@@ -112,3 +112,49 @@
   padding-top: 10px;
 }
 
+/*--------------------------------
+ recipes/edit
+---------------------------------*/
+.edit-profile {
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  padding: 20px;
+  display: flex;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.edit-profile .border {
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  padding: 10px 0;
+  overflow-wrap: break-word;
+}
+
+.profile-table {
+  padding: 2%;
+  margin-top: 20px;
+  border-collapse: separate;
+  border-spacing: 15px 25px;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.profile-table th {
+  padding: 0 2%;
+  width: 40%;
+  font-size: 125%
+
+}
+
+.profile-table td {
+  width: 60%;
+}
+
+.edit-profile table {
+  width: 80%;
+}
+
+.edit-profile .btn {
+  margin-left: 2%;
+} 

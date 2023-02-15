@@ -9,6 +9,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:notice] = "ユーザー情報を更新しました"
+      redirect_to user_path(@user.id)
+    else
+      render "edit"
+    end
+  end
+
   def posted
     @user = current_user
     @recipes = @user.recipes

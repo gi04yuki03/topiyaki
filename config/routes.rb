@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :favorites, only:[:create, :destroy]
   end
-  resources :users, only:[:show, :edit, :destroy] do
+  resources :users, only:[:show, :edit, :update, :destroy] do
     collection do
       get 'posted'
     end

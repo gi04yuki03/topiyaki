@@ -1,2 +1,26 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="user-main">
+  <%= render "shared/user_menu", user: @user %>
+  <div class="user-right">
+    <h1>プロフィール編集</h1>
+    <div class="edit-profile">
+    <%= form_with model: @user, local:true do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+      <table class="profile-table">
+        <tr align="right">
+          <th><%= f.label :name ,"ユーザー名" %></th>
+          <td><%= f.text_field :name ,class: "form-control" , placeholder: "ユーザー名を入力" %></td>
+        </tr>
+        <tr align="right">
+          <th><%= f.label :profile ,"自己紹介" %></th>
+          <td><%= f.text_area :profile ,class: "form-control" , placeholder: "自己紹介を入力" %></td>
+        </tr>
+        <tr align="right">
+          <th><%= f.label :profile_image ,"アイコン画像" %></th>
+          <td><%= f.attachment_field :profile_image %></td>
+        </tr>
+      </table>
+    <%= f.submit '更新' , class: "btn btn-light" %>
+    <% end %>
+    </div>
+  </div>
+</div>
