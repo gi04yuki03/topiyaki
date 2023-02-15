@@ -17,6 +17,9 @@
 
 .list-image {
   border-radius: 4px;
+  width: 200px;
+  height: 150px;
+  object-fit: cover; 
 }
 
 .list-text {
@@ -45,7 +48,6 @@
   border: 1px solid #e2e2e2;
   border-radius: 4px;
   margin: 20px 0;
-  width: 100%;
   border-collapse: separate;
   border-spacing: 20px 40px;
   table-layout: fixed;
