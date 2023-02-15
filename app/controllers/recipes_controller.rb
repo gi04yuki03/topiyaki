@@ -8,9 +8,12 @@ class RecipesController < ApplicationController
   end
 
   def create
-    recipe = Recipe.new(recipe_params)
-    recipe.save
-    redirect_to recipe_path(recipe.id)
+    @recipe = Recipe.new(recipe_params)
+    if @recipe.save
+      redirect_to recipe_path(@recipe.id)
+    else
+      render "new"
+    end
   end
 
   def show
@@ -30,12 +33,12 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-    redirect_to recipe_path
+    redirect_to :recipes
   end
 
   
   private
   def recipe_params
-    params.require(:recipe).permit(:title, :description, :image)
+    params.require(:recipe).permit(:title, :description, :image).merge(user_id:current_user.id)
   end
 end
