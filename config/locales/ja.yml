@@ -6,7 +6,7 @@ ja:
     # model毎に定義したいattributesを記述
     attributes:
         user:
-          name: 名前
+          name: ユーザー名
           last_name: 姓
           email: メールアドレス
           image: プロフィール画像
