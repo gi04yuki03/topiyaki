@@ -31,8 +31,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = Recipe.find(params[:id])
+    @user = User.find(params[:id])
     @user.destroy
+    flash[:notice] = "アカウントを削除しました"
     redirect_to root_path
   end
 
