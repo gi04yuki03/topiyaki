@@ -32,11 +32,14 @@
           <% if @posts_recipes.any? %>
           <ul>
             <% @posts_recipes.each do |recipe| %>
-              <%= link_to recipes_path do %>
+              <%= link_to recipe_path(recipe.id) do %>
               <li><%= recipe.title %></li>
               <% end %>
             <% end %>
           </ul>
+          <%= link_to posted_users_path do %>
+            <p class="more">もっと見る</p>
+            <% end %>
           <% else %>
             <p class="notthing"><%= "#{@user.name}さんの投稿はありません。" %></p>
           <% end %>
@@ -48,11 +51,14 @@
           <% if @favorites.any? %>
           <ul>
             <% @favorites.each do |favorite| %>
-              <%= link_to recipes_path do %>
+              <%= link_to recipe_path(favorite.recipe.id) do %>
               <li><%= favorite.recipe.title %></li>
               <% end %>
             <% end %>
           </ul>
+          <%= link_to favorites_users_path do %>
+            <p class="more">もっと見る</p>
+          <% end %>
           <% else %>
             <p class="notthing"><%= "#{@user.name}さんのお気に入りはありません。" %></p>
           <% end %>
