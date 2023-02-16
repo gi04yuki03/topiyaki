@@ -26,11 +26,12 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    if recipe.update(recipe_params)
+    if @recipe.update(recipe_params)
       flash[:notice] = "情報を更新しました"
-      redirect_to recipe_path(recipe.id)
+      redirect_to recipe_path(@recipe.id)
     else
-      render "/edit"
+      render "edit"
+    end
   end
 
   def destroy
