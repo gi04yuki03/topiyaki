@@ -17,7 +17,7 @@ ja:
           password: パスワード
           profile: 自己紹介
         recipe:
-          title: 料理名
+          title: レシピ名
           image: 写真
           description: 説明
   attributes:
