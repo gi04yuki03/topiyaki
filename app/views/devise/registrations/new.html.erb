@@ -1,0 +1,32 @@
+<div class="box">
+  <div class="box1">
+    <div class="box-inner">
+      <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <h4>新しいアカウントを作成</h4>
+        <div class="box-name">
+          <%= f.label :name, "ユーザー名" %><br/>
+          <%= f.text_field :name, autofocus: true, placeholder: "必須" %>
+        </div>
+        <div class="box-email">
+          <%= f.label :email, "Eメール" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "必須" %>
+        </div>
+        <div class="box-password">
+          <%= f.label :password, "パスワード" %>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "必須" %>
+        </div>
+        <div class="box-password">
+          <%= f.label :password_confirmation, "パスワード(確認)" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "必須" %>
+        </div>
+        <div class="box-login">
+          <%= f.submit "新しいアカウントを作成" %>
+        </div>
+      <% end %>
+      <div>
+        <%= link_to "アカウントをお持ちの方はログイン", new_user_session_path %>
+      </div>
+    </div>
+  </div>
+</div>

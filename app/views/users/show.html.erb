@@ -1,0 +1,70 @@
+<div class="user-main">
+  <%= render "shared/user_menu", user: @user %>
+  <div class="user-right">
+    <div class="notice"><%= flash[:notice] %></div>
+    <h1>マイページ</h1>
+    <div class="user-content">
+      <div class="user-content-left">
+        <div class="user-name">
+          <p>ユーザー名</p>
+          <p class="border"><%= @user.name %></p>
+        </div>
+        <div class="user-email">
+          <p>メールアドレス</p>
+          <p class="border"><%= @user.email %></>
+        </div>
+      </div>
+      <div class="user-content-right">
+        <div class="user-profile">
+          <p>自己紹介</p>
+          <p class="border"><%= @user.profile %></p>
+        </div>
+        <div class="user-processing">
+          <%= link_to 'プロフィールを編集する', edit_user_path(@user.id) %><br>
+          <%= link_to 'アカウントを削除する', user_path(@user.id), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+        </div>
+      </div>
+    </div>
+    <div class="user-recipe">
+      <div class="user-recipe-border">
+        <div class="user-recipe-inner">
+          <p><%= @user.name %>さんが投稿したレシピ　</p>
+          <% if @posts_recipes.any? %>
+          <ul>
+            <% @posts_recipes.each do |recipe| %>
+              <%= link_to recipe_path(recipe.id) do %>
+              <li><%= recipe.title %></li>
+              <% end %>
+            <% end %>
+          </ul>
+          <%= link_to posted_users_path do %>
+            <p class="more">もっと見る</p>
+            <% end %>
+          <% else %>
+            <p class="notthing"><%= "#{@user.name}さんの投稿はありません。" %></p>
+          <% end %>
+        </div>
+      </div>
+      <div class="user-recipe-border">
+        <div class="user-recipe-inner">
+          <p><%= @user.name %>さんのお気に入りレシピ</p>
+          <% if @favorites.any? %>
+          <ul>
+            <% @favorites.each do |favorite| %>
+              <%= link_to recipe_path(favorite.recipe.id) do %>
+              <li><%= favorite.recipe.title %></li>
+              <% end %>
+            <% end %>
+          </ul>
+          <%= link_to favorites_users_path do %>
+            <p class="more">もっと見る</p>
+          <% end %>
+          <% else %>
+            <p class="notthing"><%= "#{@user.name}さんのお気に入りはありません。" %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render "shared/expand_less" %>

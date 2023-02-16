@@ -1,0 +1,168 @@
+/*--------------------------------
+ users/show
+---------------------------------*/
+.user-main {
+  height: 85vh;
+  display: flex;
+}
+
+.user-left {
+  width: 15%;
+  min-width: 180px;
+  background-color: aqua;
+  padding: 15px 0;
+}
+
+.user-left-inner {
+  margin: 10px;
+  flex-direction: column;
+}
+
+.user-image {
+  max-width: 186px;
+  height: auto;
+  margin: 15px auto 5px;
+}
+
+.user-link {
+  text-align: center;
+  margin: 30px auto;
+  font-size: 120%;
+  line-height: 200%
+}
+
+.user-image img {
+  border-radius: 50%;
+}
+
+.user-image-edit {
+  font-size: 90%;
+  text-align: right;
+}
+
+.user-right {
+  width: 85%;
+  padding: 15px 20px;
+  flex-direction: column;
+}
+
+.user-content {
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  padding: 20px;
+  display: flex;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.user-content .border {
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  padding: 10px 0;
+  overflow-wrap: break-word;
+}
+
+.user-content-left {
+  width: 40%;
+}
+
+.user-content-right {
+  width: 60%;
+  margin-left: 20px;
+}
+
+.user-profile .border {
+  min-height: 110px;
+}
+
+.user-processing {
+  text-align: right;
+}
+
+.user-recipe {
+  display: flex;
+}
+
+.user-recipe-border {
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  margin: 20px;
+  width: 50%;
+}
+
+.user-recipe-inner {
+  margin: 20px 10px;
+}
+
+.user-recipe ul {
+  list-style: disc;
+  padding-left: 30px;
+  font-size: 150%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-recipe-inner p {
+  text-align: center;
+}
+
+.notthing {
+  font-size: 90%;
+  padding-top: 10px;
+}
+
+.more {
+  font-size: 13px;
+}
+
+.user-recipe-inner .more {
+  text-align: right;
+}
+
+/*--------------------------------
+ recipes/edit
+---------------------------------*/
+.edit-profile {
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  padding: 20px;
+  display: flex;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.edit-profile .border {
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  padding: 10px 0;
+  overflow-wrap: break-word;
+}
+
+.profile-table {
+  padding: 2%;
+  margin-top: 20px;
+  border-collapse: separate;
+  border-spacing: 15px 25px;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.profile-table th {
+  padding: 0 2%;
+  width: 40%;
+  font-size: 125%
+
+}
+
+.profile-table td {
+  width: 60%;
+}
+
+.edit-profile table {
+  width: 80%;
+}
+
+.edit-profile .btn {
+  margin-left: 2%;
+} 

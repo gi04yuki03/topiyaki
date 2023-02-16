@@ -1,0 +1,111 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+p {
+  font-size: 20px;
+}
+
+h4 {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+  text-align: center;
+}
+
+.box1 {
+  width: 480px;
+  min-height: 550px;
+  border-radius: 6px;
+  border: 1px #e2e2e2 solid;
+  margin: 60px auto;
+}
+
+.box2 {
+  width: 480px;
+  min-height: 410px;
+  border-radius: 6px;
+  border: 1px #e2e2e2 solid;
+  margin: 60px auto;
+}
+
+.box-inner {
+  padding: 30px 100px;
+}
+
+.box-name {
+  margin-bottom: 13px;
+  text-align: left;
+}
+
+.box-email {
+  margin-bottom: 13px;
+  text-align: left;
+}
+
+.box-password {
+  margin-bottom: 22px;
+  text-align: left;
+}
+
+.box-name label, .box-email label, .box-password label {
+  font-weight: 700;
+  font-size: 13px;
+  padding-left: 2px;
+  padding-bottom: 2px;
+}
+
+.box-name input[type="text"], .box-email input[type="email"], .box-password input[type="password"] {
+  border-style: none;
+  box-sizing: border-box;
+  width: 100%;
+  height: 31px;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  padding-left: 8px;
+}
+
+.box-password a {
+  font-size: 13px;
+}
+
+.column-left {
+  float: left;
+}
+
+.column-right {
+  float: right;
+}
+
+.box-login {
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid #e2e2e2;
+  margin: 25px 30px 35px;
+}
+
+.box2-login {
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid #e2e2e2;
+  margin: 25px 30px 15px;
+}
+
+.box-login input[type="submit"] {
+  border-style: none;
+  width: 100%;
+  height: 31px;
+}
+
+.remember {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
