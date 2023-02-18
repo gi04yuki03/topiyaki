@@ -1,6 +1,8 @@
 <div class="container">
   <div class="notice"><%= flash[:notice] %></div>
   <h1><%= @recipe.title %></h1>
+    <%= link_to '編集する', edit_recipe_path(@recipe.id) %>
+    <%= link_to '削除する', recipe_path(@recipe.id), method: :delete, data: { confirm: "本当に削除しますか？" } %>
     <div class="show-recipe">
       <div class="top-show">
         <div class="recipe-image">
@@ -16,8 +18,6 @@
       </div>
     </div>
     <%= render "shared/favorite", recipe: @recipe %>
-  <%= link_to '編集する', edit_recipe_path(@recipe.id) %>
-  <%= link_to '削除する', recipe_path(@recipe.id), method: :delete, data: { confirm: "本当に削除しますか？" } %>
-  <%= link_to '戻る', :back %>
+    <%= render "recipes/comment" %>
 </div>
 <%= render "shared/expand_less" %>
