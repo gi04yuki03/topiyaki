@@ -1,0 +1,42 @@
+.comments {
+  display: flex;
+}
+
+.comments-form {
+  margin: 20px;
+  width: 50%;
+}
+
+.coments-index {
+  margin: 20px;
+  width: 50%;
+}
+
+.comments-list {
+  display: flex;
+  max-width: 100%;  
+  justify-content: space-between;
+}
+
+.comment-content {
+  width: 80%;
+}
+
+.comment-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-date {
+  font-size: 14px;
+  padding-right: 10px;
+}
+
+.comment-text {
+  font-size: 24px;
+}
+
+.comment-button {
+  width: 20%;
+}
