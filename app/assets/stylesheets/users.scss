@@ -18,11 +18,17 @@
   flex-direction: column;
 }
 
-.user-image {
+.user-image{
   max-width: 186px;
   height: auto;
   margin: 15px auto 5px;
 }
+
+.user-image img{
+  max-width: 100%;
+  height: auto;
+}
+
 
 .user-link {
   text-align: center;
