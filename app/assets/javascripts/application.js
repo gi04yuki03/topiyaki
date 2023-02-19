@@ -17,6 +17,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require cocoon
 
 $(document).on ("turbolinks:load", function() {
   $('.drawer').drawer();
