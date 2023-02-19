@@ -5,6 +5,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @ringredients = @recipe.ingredients.build
   end
 
   def create
@@ -12,7 +13,7 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to recipe_path(@recipe.id)
     else
-      render "new"
+      render :new
     end
   end
 
@@ -24,6 +25,7 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
+    @ringredients = @recipe.ingredients
   end
 
   def update
@@ -32,7 +34,7 @@ class RecipesController < ApplicationController
       flash[:notice] = "情報を更新しました"
       redirect_to recipe_path(@recipe.id)
     else
-      render "edit"
+      render :edit
     end
   end
 
@@ -45,6 +47,8 @@ class RecipesController < ApplicationController
   
   private
   def recipe_params
-    params.require(:recipe).permit(:title, :description, :image).merge(user_id:current_user.id)
+    params.require(:recipe).permit(:title, :description, :image,
+      ingredients_attributes: [:id, :ingredient, :quantity, :_destroy])
+      .merge(user_id:current_user.id)
   end
 end

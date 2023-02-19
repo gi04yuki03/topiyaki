@@ -1,21 +1,37 @@
 <div class="container">
   <h1>新規レシピ投稿</h1>
-  <%= form_with model: @recipe, local:true do |f| %>
-    <table class ="new-recipe">
-      <%= render 'shared/error_messages', object: f.object %>
-      <tr class="new-title">
-        <th><%= f.label :title, "レシピ名" %></th>
-        <td><%= f.text_field :title, class: "form-control" %></td>
-      </tr>
-      <tr class="new-description">
-        <th><%= f.label :description, "一言" %></th>
-        <td><%= f.text_area :description, class: "form-control" %></td>
-      </tr>
-      <tr class="new-image">
-        <th><%= f.label :image, "写真" %></th>
-        <td><%= f.attachment_field :image %></td>
-      </tr>
-    </table>
+  <div class="recipe-main">
+    <%= form_with model: @recipe, local:true do |f| %>
+      <table class ="new-recipe">
+        <%= render 'shared/error_messages', object: f.object %>
+        <tr class="new-title">
+          <th><%= f.label :title, "レシピ名" %></th>
+          <td><%= f.text_field :title, :size=>"20", class: "form-control" %></td>
+        </tr>
+        <tr class="new-description">
+          <th><%= f.label :description, "一言" %></th>
+          <td><%= f.text_area :description, :size=>"60x3", class: "form-control" %></td>
+        </tr>
+        <tr class="new-image">
+          <th><%= f.label :image, "写真" %></th>
+          <td><%= f.attachment_field :image %></td>
+        </tr>
+      </table>
+      <div class="ingredient-title">材料</div>
+        <section class="ingredient">
+          <div>
+            <%= f.fields_for :ingredients do |ff| %>
+              <%= render "recipes/ingredient_fields", f: ff %>
+            <% end %>
+          </div>
+          <div id="detail-association-insertion-point"></div>
+          <%= link_to_add_association "材料の追加", f, :ingredients,
+          class: "btn btn-light add-btn", data: {
+          association_insertion_node: '#detail-association-insertion-point',
+          association_insertion_method: 'after' } %>
+        </section>
+      </div>
+    </div>
     <%= f.submit '投稿', class: "btn btn-light" %>
   <% end %>
 </div>
