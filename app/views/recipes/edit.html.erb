@@ -1,7 +1,7 @@
 <div class="container">
-  <h1>レシピ編集</h1>
-  <div class="recipe-main">
+  <h1>新規レシピ投稿</h1>
     <%= form_with model: @recipe, local:true do |f| %>
+    <div class="recipe-main">
       <table class ="new-recipe">
         <%= render 'shared/error_messages', object: f.object %>
         <tr class="new-title">
@@ -17,21 +17,34 @@
           <td><%= f.attachment_field :image %></td>
         </tr>
       </table>
-      <div class="ingredient-title">材料</div>
-      <section class="ingredient">
+      <section class="ingredients-section">
+        <div class="ingredient-title">材料</div>
         <div>
           <%= f.fields_for :ingredients do |ff| %>
             <%= render "recipes/ingredient_fields", f: ff %>
           <% end %>
         </div>
-        <div id="detail-association-insertion-point"></div>
+        <div id="detail-association-insertion1"></div>
         <%= link_to_add_association "材料の追加", f, :ingredients,
-          class: "btn btn-light add-btn", data: {
-          association_insertion_node: '#detail-association-insertion-point',
-          association_insertion_method: 'after' } %>
+        class: "btn btn-light add-btn", data: {
+        association_insertion_node: '#detail-association-insertion1',
+        association_insertion_method: 'after' } %>
       </section>
-      <%= f.submit '修正', class: "btn btn-light" %>
-    <% end %>
-  </div>
+      <section class="procedure">
+        <div class="procedure-title">作り方</div>
+        <div>
+          <%= f.fields_for :procedures do |ff| %>
+            <%= render "recipes/procedure_fields", f: ff %>
+          <% end %>
+        </div>
+        <div id="detail-association-insertion2"></div>
+        <%= link_to_add_association "手順の追加", f, :procedures,
+        class: "btn btn-light add-btn", data: {
+        association_insertion_node: '#detail-association-insertion2',
+        association_insertion_method: 'after' } %>
+      </section>
+    </div>
+    <%= f.submit '投稿', class: "btn btn-light" %>
+  <% end %>
 </div>
 <%= render "shared/expand_less" %>

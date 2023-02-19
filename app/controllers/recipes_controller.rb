@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @ringredients = @recipe.ingredients.build
+    @procedures = @recipe.procedures.build
   end
 
   def create
@@ -25,7 +26,6 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
-    @ringredients = @recipe.ingredients
   end
 
   def update
@@ -44,11 +44,11 @@ class RecipesController < ApplicationController
     redirect_to :recipes
   end
 
-  
   private
   def recipe_params
     params.require(:recipe).permit(:title, :description, :image,
-      ingredients_attributes: [:id, :ingredient, :quantity, :_destroy])
+      ingredients_attributes: [:id, :ingredient, :quantity, :_destroy],
+      procedures_attributes:  [:id, :procedure, :_destroy])
       .merge(user_id:current_user.id)
   end
 end
