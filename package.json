@@ -1,5 +1,7 @@
 {
   "name": "recipeapp",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "cocoon": "github:nathanvda/cocoon#c24ba53"
+  }
 }
