@@ -7,7 +7,7 @@
   padding: 30px 30px 20px;
   border: 1px solid #e2e2e2;
   border-radius: 4px;
-  margin-top: 20px;
+  margin: 20px;
 }
 
 .list-preview {
@@ -44,7 +44,7 @@
 .new-recipe {
   display: flex;
   flex-direction: column;
-  margin: 20px 0;
+  margin-bottom: 20px;
   border-collapse: separate;
   border-spacing: 20px 40px;
   table-layout: fixed;
@@ -55,6 +55,7 @@
   padding: 2%;
   border: 1px solid #e2e2e2;
   border-radius: 4px;
+  margin: 20px;
 }
 
 .new-recipe th {
@@ -76,7 +77,16 @@
   width: 80%;
 }
 
-.ingredient-title {
+.ingredients-section, .procedure-section {
+  border-top: 1px solid #e2e2e2;
+  padding-top: 20px;
+}
+
+.ingredients-section {
+  padding-bottom: 20px;
+}
+
+.ingredient-title, .procedure-title {
   font-size:  125%;
   margin: 20px 20px 15px;
 }
@@ -89,12 +99,12 @@
   margin: 20px;
 }
 
-.ingredient-fields {
+.ingredient-fields, .procedure-fields {
   width: 100%;
   display: flex;
 }
 
-.ingredient-fields div {
+.ingredient-fields div, .procedure-fields div {
   margin-top: 5px;
 }
 
@@ -120,10 +130,16 @@
 }
 
 .ingredient {
-  display: flex;
-  font-size: 150%;
-  justify-content: center;
+  flex-direction: column;
+  text-align: center;
   width: 50%;
+}
+
+.ingredient-content {
+  font-size: 150%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .quantity {
@@ -133,6 +149,22 @@
  max-width: 100%;
 }
 
-.bottom-show {
+.procedure {
   display: flex;
+  flex-direction: column;
+  margin: 30px 20px 0;
+}
+
+.procedure-content {
+  display: flex;
+}
+
+.procedure-number {
+  margin-right: 30px; 
+}
+
+.ingredient h3, .procedure h3 span {
+  border-bottom: 1px solid #000;
+  display: inline-block;
+  margin-bottom: 10px;
 }

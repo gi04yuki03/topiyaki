@@ -13,14 +13,24 @@
             <%= image_tag 'no_image.jpg', size: '480x270' %>
           <% end %>
         </div>
+        <div class="ingredient">
+        <h3>材料</h3>
         <% @recipe.ingredients.each do |ingredient|%>
-          <div class="ingredient">
+          <div class="ingredient-content">
             <p><%= ingredient.ingredient %></p>
             <p class="quantity"><%= ingredient.quantity %></p>
           </div>
         <% end %>
+        </div>
       </div>
-      <div class="bottom-show">
+      <div class="procedure">
+        <h3><span>作り方</span></h3>
+        <% @recipe.procedures.each.with_index(1) do |procedure, i|%>
+          <div class="procedure-content">
+            <p class="procedure-number"><%= i %></p>
+            <p><%= procedure.procedure %></p>
+          </div>
+        <% end %>
       </div>
     </div>
     <%= render "shared/favorite", recipe: @recipe %>
