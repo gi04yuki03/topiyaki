@@ -1,6 +1,12 @@
-<main class="content">
-  <div class="box">
-    <h1>カップやきそば　ちょい足しトッピング</h1>
+<div class="box">
+  <div class="mv">
+    <h1>YAKITOPI</h1><p>君の知らないやきそばがここにある</p>
+    <div class="mv-part">
+      <%= form_with url: recipes_path, method: :get, local: true do |f| %>
+        <%= f.text_field :procedure , placeholder:"今日のトッピングを探す" , class:"form-control search-form" %>
+          <%= image_submit_tag("yakisoba.png", class: "search-icon") %>
+      <% end %>
+    </div>
   </div>
-  <%= render "shared/expand_less" %>
-</main>
+</div>
+<%= render "shared/expand_less" %>
