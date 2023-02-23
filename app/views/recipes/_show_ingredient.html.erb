@@ -1,0 +1,10 @@
+<div class="ingredient">
+  <h3>材料</h3>
+    <% recipe.ingredients.each do |ingredient|%>
+      <div class="ingredient-content">
+        <p><%= ingredient.ingredient %></p>
+        <p class="quantity"><%= ingredient.quantity %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

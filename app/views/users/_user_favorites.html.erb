@@ -1,0 +1,19 @@
+<div class="user-recipe-border">
+  <div class="user-recipe-inner">
+    <p><%= user.name %>さんのお気に入りレシピ</p>
+    <% if favorites.any? %>
+      <ul>
+        <% favorites.each do |favorite| %>
+          <%= link_to recipe_path(favorite.recipe.id) do %>
+            <li><span><%= favorite.recipe.title %></span></li>
+          <% end %>
+        <% end %>
+      </ul>
+      <%= link_to favorites_users_path do %>
+        <p class="more"><span>もっと見る</span></p>
+      <% end %>
+    <% else %>
+      <p class="notthing"><%= "#{user.name}さんのお気に入りはありません。" %></p>
+    <% end %>
+  </div>
+</div>

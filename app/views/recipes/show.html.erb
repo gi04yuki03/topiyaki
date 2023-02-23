@@ -1,39 +1,25 @@
 <div class="container">
   <div class="notice"><%= flash[:notice] %></div>
-  <h1><%= @recipe.title %></h1>
+  <h1><%= @recipe.title %></h1><br>
+  <% if @recipe.user == current_user %>
     <%= link_to '編集する', edit_recipe_path(@recipe.id) %>
     <%= link_to '削除する', recipe_path(@recipe.id), method: :delete, data: { confirm: "本当に削除しますか？" } %>
-    <%= @recipe.description %>
-    <div class="show-recipe">
-      <div class="top-show">
-        <div class="recipe-image">
-          <% if @recipe.image.present? %>
-            <%= attachment_image_tag @recipe, :image, format: 'jpeg', size: '480x270' %>
-          <% else %>
-            <%= image_tag 'no_image.jpg', size: '480x270' %>
-          <% end %>
-        </div>
-        <div class="ingredient">
-        <h3>材料</h3>
-        <% @recipe.ingredients.each do |ingredient|%>
-          <div class="ingredient-content">
-            <p><%= ingredient.ingredient %></p>
-            <p class="quantity"><%= ingredient.quantity %></p>
-          </div>
-        <% end %>
-        </div>
-      </div>
-      <div class="procedure">
-        <h3><span>作り方</span></h3>
-        <% @recipe.procedures.each.with_index(1) do |procedure, i|%>
-          <div class="procedure-content">
-            <p class="procedure-number"><%= i %></p>
-            <p><%= procedure.procedure %></p>
-          </div>
+  <% end %>
+  <p><%= @recipe.description %></p>
+  <div class="show-recipe">
+    <div class="top-show">
+      <div class="recipe-image">
+        <% if @recipe.image.present? %>
+          <%= attachment_image_tag @recipe, :image, format: 'jpeg', size: '480x270' %>
+        <% else %>
+          <%= image_tag 'no_image.jpg', size: '480x270' %>
         <% end %>
       </div>
+      <%= render "recipes/show_ingredient", recipe: @recipe %>
+      <%= render "recipes/show_procedure",  recipe: @recipe %>
     </div>
     <%= render "shared/favorite", recipe: @recipe %>
     <%= render "recipes/comment" %>
+  </div>
 </div>
 <%= render "shared/expand_less" %>
