@@ -1,6 +1,14 @@
 /*--------------------------------
  recipes/index
 ---------------------------------*/
+.index-search {
+  text-align: right;
+}
+
+.index-search .btn, .index-search .search-form {
+  display: inline;
+}
+
 .recipes-list {
   display: flex;
   flex-direction: column;
@@ -8,10 +16,14 @@
   border: 1px solid #e2e2e2;
   border-radius: 4px;
   margin: 20px;
+  background-color: #ffffff;
 }
 
 .list-preview {
   display: flex;
+}
+
+.recipes-item {
   border-bottom: 1px solid #e2e2e2;
 }
 
@@ -56,6 +68,7 @@
   border: 1px solid #e2e2e2;
   border-radius: 4px;
   margin: 20px;
+  background-color: #ffffff;
 }
 
 .new-recipe th {
@@ -71,6 +84,11 @@
 
 .new-title, .new-description, .new-image {
   border-bottom: 1px solid #e2e2e2;
+}
+
+.new-font, .ingredient-title, .procedure-title {
+  font-weight: normal;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .new-recipe table {
@@ -123,6 +141,7 @@
   border-collapse: separate;
   border-spacing: 20px 40px;
   table-layout: fixed;
+  background-color: #ffffff;
 }
 
 .top-show {
@@ -146,7 +165,7 @@
   margin-left: 20px;
 }
 .recipe-image img {
- max-width: 100%;
+  max-width: 100%;
 }
 
 .procedure {

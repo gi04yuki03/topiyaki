@@ -15,6 +15,15 @@
 .comments-list {
   display: flex;
   max-width: 100%;  
+  flex-direction: column;
+}
+
+.comments-list p {
+  font-size: 18px;
+}
+
+.comment-box {
+  display: flex;
   justify-content: space-between;
 }
 
@@ -28,8 +37,12 @@
   justify-content: space-between;
 }
 
+.comment-top p {
+  margin-bottom: 0;
+}
+
 .comment-date {
-  font-size: 14px;
+  font-size: 14px!important;
   padding-right: 10px;
 }
 

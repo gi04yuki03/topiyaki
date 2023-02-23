@@ -27,6 +27,7 @@ h4 {
   border-radius: 6px;
   border: 1px #e2e2e2 solid;
   margin: 60px auto;
+  background-color: #fff;
 }
 
 .box2 {
@@ -35,6 +36,7 @@ h4 {
   border-radius: 6px;
   border: 1px #e2e2e2 solid;
   margin: 60px auto;
+  background-color: #fff;
 }
 
 .box-inner {
@@ -90,6 +92,8 @@ h4 {
   box-sizing: border-box;
   border: 1px solid #e2e2e2;
   margin: 25px 30px 35px;
+  background-color: #3a2d2a;
+  transition: opacity .3s;
 }
 
 .box2-login {
@@ -97,12 +101,19 @@ h4 {
   box-sizing: border-box;
   border: 1px solid #e2e2e2;
   margin: 25px 30px 15px;
+  background-color: #3a2d2a;
+  transition: opacity .3s;
 }
 
-.box-login input[type="submit"] {
+.box-login:hover, .box2-login:hover {
+  opacity: 0.8;
+}
+
+.box-login input[type="submit"], .box2-login input[type="submit"] {
   border-style: none;
   width: 100%;
   height: 31px;
+  color: #fff;
 }
 
 .remember {

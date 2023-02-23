@@ -9,8 +9,18 @@
 .user-left {
   width: 15%;
   min-width: 180px;
-  background-color: aqua;
+  background: rgb(111, 76, 33);
   padding: 15px 0;
+}
+
+.user-left a {
+  color: #fff!important;
+}
+
+.user-left a:hover {
+  color: #fff;
+  opacity: 0.7;
+  border-bottom: 1px solid #fff;
 }
 
 .user-left-inner {
@@ -29,12 +39,11 @@
   height: auto;
 }
 
-
 .user-link {
   text-align: center;
   margin: 30px auto;
   font-size: 120%;
-  line-height: 200%
+  line-height: 200%;
 }
 
 .user-image img {
@@ -59,6 +68,7 @@
   display: flex;
   text-align: center;
   margin-top: 20px;
+  background-color: #ffffff;
 }
 
 .user-content .border {
@@ -66,6 +76,7 @@
   border-radius: 4px;
   padding: 10px 0;
   overflow-wrap: break-word;
+  background-color: #ffffff;
 }
 
 .user-content-left {
@@ -94,6 +105,7 @@
   border-radius: 4px;
   margin: 20px;
   width: 50%;
+  background-color: #ffffff;
 }
 
 .user-recipe-inner {
@@ -107,6 +119,16 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.user-recipe span {
+  border-bottom: 1px solid #ffffff;
+  display: inline-block;
+}
+.user-recipe span:hover {
+  opacity: 0.7;
+  border-bottom: 1px solid #333;
+  display: inline-block;
 }
 
 .user-recipe-inner p {
@@ -135,7 +157,8 @@
   padding: 20px;
   display: flex;
   text-align: left;
-  margin-top: 20px;
+  margin: 20px;
+  background-color: #ffffff;
 }
 
 .edit-profile .border {
@@ -143,6 +166,7 @@
   border-radius: 4px;
   padding: 10px 0;
   overflow-wrap: break-word;
+  background-color: #ffffff;
 }
 
 .profile-table {
