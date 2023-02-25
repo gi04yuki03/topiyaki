@@ -1,0 +1,9 @@
+<div class="procedure">
+  <h3><span>作り方</span></h3>
+  <% @recipe.procedures.each.with_index(1) do |procedure, i|%>
+    <div class="procedure-content">
+      <p class="procedure-number"><%= i %></p>
+      <p><%= procedure.procedure %></p>
+    </div>
+  <% end %>
+</div>

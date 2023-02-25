@@ -20,10 +20,10 @@ class Recipe < ApplicationRecord
   end
 
   def require_any_ingredients
-    errors.add(:base, "材料は1つ以上登録してください") if self.ingredients.empty?
+    errors.add(:base, "材料は1つ以上登録してください。") if self.ingredients.blank?
   end
 
   def require_any_procedures
-    errors.add(:base, "手順は1つ以上登録してください") if self.procedures.empty?
+    errors.add(:base, "手順は1つ以上登録してください。") if self.procedures.blank?
   end
 end

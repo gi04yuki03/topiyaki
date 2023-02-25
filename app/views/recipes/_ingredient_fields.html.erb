@@ -1,8 +1,8 @@
 <div class="nested-fields">
   <div class="ingredient-fields">
-    <div class="col-5"><%= f.text_field :ingredient, class: "form-control", placeholder: "材料" %></div>
-    <div class="col-2"><%= f.text_field :quantity,   class: "form-control", placeholder: "分量" %></div>
-    <div class="col-2">
+    <div class="col-6 col-lg-6"><%= f.text_field :ingredient, class: "form-control", placeholder: "材料" %></div>
+    <div class="col-3 col-lg-2"><%= f.text_field :quantity,   class: "form-control", placeholder: "分量" %></div>
+    <div class="col-3 col-lg-2">
       <%= link_to_remove_association "削除", f, class: "btn btn-light" %>
     </div>
   </div>

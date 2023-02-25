@@ -3,48 +3,13 @@
     <%= form_with model: @recipe, local:true do |f| %>
     <div class="recipe-main">
       <table class ="new-recipe">
-        <%= render 'shared/error_messages', object: f.object %>
-        <tr class="new-title">
-          <th><%= f.label :title, "レシピ名" %></th>
-          <td><%= f.text_field :title, :size=>"20", class: "form-control" %></td>
-        </tr>
-        <tr class="new-description">
-          <th><%= f.label :description, "一言" %></th>
-          <td><%= f.text_area :description, :size=>"60x3", class: "form-control" %></td>
-        </tr>
-        <tr class="new-image">
-          <th><%= f.label :image, "写真" %></th>
-          <td><%= f.attachment_field :image %></td>
-        </tr>
-      </table>
-      <section class="ingredients-section">
-        <div class="ingredient-title">材料</div>
-        <div>
-          <%= f.fields_for :ingredients do |ff| %>
-            <%= render "recipes/ingredient_fields", f: ff %>
-          <% end %>
-        </div>
-        <div id="detail-association-insertion1"></div>
-        <%= link_to_add_association "材料の追加", f, :ingredients,
-        class: "btn btn-light add-btn", data: {
-        association_insertion_node: '#detail-association-insertion1',
-        association_insertion_method: 'after' } %>
-      </section>
-      <section class="procedure">
-        <div class="procedure-title">作り方</div>
-        <div>
-          <%= f.fields_for :procedures do |ff| %>
-            <%= render "recipes/procedure_fields", f: ff %>
-          <% end %>
-        </div>
-        <div id="detail-association-insertion2"></div>
-        <%= link_to_add_association "手順の追加", f, :procedures,
-        class: "btn btn-light add-btn", data: {
-        association_insertion_node: '#detail-association-insertion2',
-        association_insertion_method: 'after' } %>
-      </section>
+      <%= render "shared/error_messages", object: f.object %>
+      <%= render "recipes/new_table", f: f %>
+      <%= render "recipes/mobile_new_table", f: f %>
+      <%= render "recipes/new_ingredients", f: f %>
+      <%= render "recipes/new_procedures", f: f %>
     </div>
-    <%= f.submit '投稿', class: "btn btn-light" %>
+    <%= f.submit '修正', class: "btn btn-light" %>
   <% end %>
 </div>
 <%= render "shared/expand_less" %>

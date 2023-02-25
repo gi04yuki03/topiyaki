@@ -6,6 +6,8 @@ class CommentsController < ApplicationController
     if comment.save!
       flash[:notice] = "コメントを投稿しました"
       redirect_to recipe_path(recipe)
+    else
+      redirect_to recipe_path(recipe)    
     end
     
   end

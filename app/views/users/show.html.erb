@@ -1,5 +1,5 @@
 <div class="user-main">
-  <%= render "shared/user_menu", user: @user %>
+  <%= render "users/user_menu", user: @user %>
   <div class="user-right">
     <div class="notice"><%= flash[:notice] %></div>
     <h1>マイページ</h1>
@@ -21,49 +21,13 @@
         </div>
         <div class="user-processing">
           <%= link_to 'プロフィールを編集する', edit_user_path(@user.id) %><br>
-          <%= link_to 'アカウントを削除する', user_path(@user.id), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+          <%= link_to 'アカウントを削除する',   user_path(@user.id), method: :delete, data: { confirm: "本当に削除しますか？" } %>
         </div>
       </div>
     </div>
     <div class="user-recipe">
-      <div class="user-recipe-border">
-        <div class="user-recipe-inner">
-          <p><%= @user.name %>さんが投稿したレシピ　</p>
-          <% if @posts_recipes.any? %>
-          <ul>
-            <% @posts_recipes.each do |recipe| %>
-              <%= link_to recipe_path(recipe.id) do %>
-              <li><%= recipe.title %></li>
-              <% end %>
-            <% end %>
-          </ul>
-          <%= link_to posted_users_path do %>
-            <p class="more">もっと見る</p>
-            <% end %>
-          <% else %>
-            <p class="notthing"><%= "#{@user.name}さんの投稿はありません。" %></p>
-          <% end %>
-        </div>
-      </div>
-      <div class="user-recipe-border">
-        <div class="user-recipe-inner">
-          <p><%= @user.name %>さんのお気に入りレシピ</p>
-          <% if @favorites.any? %>
-          <ul>
-            <% @favorites.each do |favorite| %>
-              <%= link_to recipe_path(favorite.recipe.id) do %>
-              <li><%= favorite.recipe.title %></li>
-              <% end %>
-            <% end %>
-          </ul>
-          <%= link_to favorites_users_path do %>
-            <p class="more">もっと見る</p>
-          <% end %>
-          <% else %>
-            <p class="notthing"><%= "#{@user.name}さんのお気に入りはありません。" %></p>
-          <% end %>
-        </div>
-      </div>
+      <%= render "users/user_posted",    {user: @user, posts_recipes: @posts_recipes} %>
+      <%= render "users/user_favorites", {user: @user, favorites: @favorites} %>
     </div>
   </div>
 </div>

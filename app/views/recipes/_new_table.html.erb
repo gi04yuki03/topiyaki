@@ -1,0 +1,14 @@
+<table class ="new-recipe pc-only">
+  <tr class="new-title">
+    <th class="col-lg-3"><%= f.label :title, "レシピ名", class: "new-font" %></th>
+    <td class="col-lg-9"><%= f.text_field :title, class: "form-control" %></td>
+  </tr>
+  <tr class="new-description">
+    <th class="col-lg-3"><%= f.label :description, "一言", class: "new-font" %></th>
+    <td class="col-lg-9"><%= f.text_area :description, :size=>"60x3", class: "form-control" %></td>
+  </tr>
+  <tr class="new-image">
+    <th class="col-lg-3"><%= f.label :image, "写真", class: "new-font" %></th>
+    <td class="col-lg-9"><%= f.attachment_field :image %></td>
+  </tr>
+</table>

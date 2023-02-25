@@ -1,20 +1,16 @@
-
-
-<!-- header -->
 <header class="header">
   <div class ="header-logo">
     <%= link_to root_path do %>
       <%= image_tag 'logo.png', alt: "アイコン" %>
     <% end %>
   </div>
-
   <nav>
     <% if user_signed_in? %>
       <%= render "shared/signed_nav" %>
+      <%= render "shared/mobile_signed_nav" %>
     <% else %>
       <%= render "shared/signin_nav" %>
       <%= render "shared/not_signed_nav" %>
     <% end %>
   </nav>
 </header>
-<!-- /header -->

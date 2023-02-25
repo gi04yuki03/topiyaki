@@ -4,14 +4,14 @@
       <% if user.profile_image.present? %>
         <%= attachment_image_tag user, :profile_image, format: 'jpeg', size: "100x100" %>
       <% else %>
-        <%= image_tag 'no_image.jpg'%>
+        <%= image_tag 'no_image.jpg' %>
       <% end %>
     </div>
     <div class="user-image-edit">
       <%= link_to 'プロフィールを編集する', edit_user_path(user.id) %>
     </div>
     <div class="user-link">
-      <ul class>
+      <ul class="user-link-list">
         <li>
           <%= link_to "投稿レシピ", posted_users_path %>
         </li>

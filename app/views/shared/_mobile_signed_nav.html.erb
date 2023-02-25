@@ -12,7 +12,10 @@
         <%= link_to "レシピ登録", new_recipe_path %>
       </li>
       <li class="drawer-brand">
-        <%= link_to "ログイン", new_user_session_path %>
+        <%= link_to "マイページ", user_path(current_user.id) %>
+      </li>
+      <li class="drawer-brand">
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       </li>
     </ul>
   </div>

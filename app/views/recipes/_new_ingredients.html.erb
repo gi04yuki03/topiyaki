@@ -1,0 +1,13 @@
+<section class="ingredients-section">
+  <div class="ingredient-title">材料</div>
+  <div>
+    <%= f.fields_for :ingredients do |ff| %>
+      <%= render "recipes/ingredient_fields", f: ff %>
+    <% end %>
+  </div>
+  <div id="detail-association-insertion1"></div>
+  <%= link_to_add_association "材料の追加", f, :ingredients,
+    class: "btn btn-light add-btn", data: {
+    association_insertion_node: '#detail-association-insertion1',
+    association_insertion_method: 'after' } %>
+</section>

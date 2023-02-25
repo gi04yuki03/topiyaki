@@ -1,0 +1,19 @@
+<div class="user-recipe-border">
+  <div class="user-recipe-inner">
+    <p><%= user.name %>さんが投稿したレシピ　</p>
+    <% if posts_recipes.any? %>
+      <ul>
+        <% posts_recipes.each do |recipe| %>
+          <%= link_to recipe_path(recipe.id) do %>
+            <li><span><%= recipe.title %></span></li>
+          <% end %>
+        <% end %>
+      </ul>
+      <%= link_to posted_users_path do %>
+        <p class="more"><span>もっと見る</span></p>
+      <% end %>
+    <% else %>
+      <p class="notthing"><%= "#{user.name}さんの投稿はありません。" %></p>
+    <% end %>
+  </div>
+</div>

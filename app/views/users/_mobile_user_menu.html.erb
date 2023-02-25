@@ -1,0 +1,30 @@
+<div class="user-top">
+  <div class="user-left-inner">
+    <div class="user-image">
+      <% if user.profile_image.present? %>
+        <%= attachment_image_tag user, :profile_image, format: 'jpeg', size: "100x100" %>
+      <% else %>
+        <%= image_tag 'no_image.jpg' %>
+      <% end %>
+    </div>
+    <div class="user-image-edit">
+      <%= link_to 'プロフィールを編集する', edit_user_path(user.id) %>
+    </div>
+    <div class="user-link">
+      <ul class>
+        <li>
+          <%= link_to "投稿レシピ", posted_users_path %>
+        </li>
+        <li>
+          <%= link_to "お気に入りレシピ", favorites_users_path %>
+        </li>
+        <li>
+          <%= link_to "マイページ", user_path(current_user.id) %>
+        </li>
+        <li>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

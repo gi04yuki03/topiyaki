@@ -1,0 +1,14 @@
+<div class ="new-recipe2 sp-only">
+  <div class="new-title2">
+    <%= f.label :title, "レシピ名", class: "new-font2" %>
+    <%= f.text_field :title, :size=>"20", class: "form-control" %>
+  </div>
+  <div class="new-description2">
+    <%= f.label :description, "一言", class: "new-font2" %>
+    <%= f.text_area :description, :size=>"60x3", class: "form-control" %>
+  </div>
+  <div class="new-image2">
+    <%= f.label :image, "写真　　", class: "new-font2" %>
+    <%= f.attachment_field :image %>
+  </div>
+</div>
