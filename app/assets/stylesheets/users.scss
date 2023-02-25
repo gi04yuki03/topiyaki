@@ -2,7 +2,7 @@
  users/show
 ---------------------------------*/
 .user-main {
-  height: 85vh;
+  min-height: 85vh;
   display: flex;
 }
 
@@ -78,6 +78,8 @@
   overflow-wrap: break-word;
   background-color: #ffffff;
 }
+
+
 
 .user-content-left {
   width: 40%;
@@ -196,3 +198,101 @@
 .edit-profile .btn {
   margin-left: 2%;
 } 
+
+/*media Queries 991
+----------------------------------------------------*/
+@media screen and (max-width: 991px) {
+/* recipes/show */
+.user-main {
+  flex-direction: column;
+  width: 100%;
+}
+
+.user-left {
+  width: 100%;
+  height: auto;
+  padding: 0 10%;
+}
+
+.user-left-inner {
+  margin: 0;
+}
+
+.user-image, .user-image-edit  {
+  display: none;
+}
+
+.user-link-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.user-link {
+  margin: 0;
+}
+
+.user-right {
+width: 100%;
+}
+}
+
+
+/*media Queries 767
+----------------------------------------------------*/
+@media screen and (max-width: 767px) {
+  /* recipes/show */
+  .user-right {
+    width: 100%;
+    padding: 15px 20px;
+    flex-direction: column;
+  }
+  
+  .user-content {
+    padding: 20px;
+    flex-direction: column;
+    margin-top: 0px;
+  }
+  
+  .user-link {
+    font-size: 100%;
+  }
+  
+  .user-content-left {
+    width: 100%;
+  }
+  
+  .user-content-right {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .user-profile .border {
+    min-height: 55px;
+  }
+  
+  .user-recipe {
+    flex-direction: column;
+  }
+  
+  .user-recipe-border {
+    margin: 20px 0;
+    width: 100%;
+  }
+  
+  .user-recipe-inner {
+    margin: 20px 10px;
+  }
+  /* recipes/edit */
+  .edit-profile {
+    padding: 0;
+    display: flex;
+    text-align: left;
+    margin: 0 0 20px;
+  }
+  
+  .profile-table {
+    margin-top: 0px;
+  }
+}

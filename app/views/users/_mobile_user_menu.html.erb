@@ -1,4 +1,4 @@
-<div class="user-left">
+<div class="user-top">
   <div class="user-left-inner">
     <div class="user-image">
       <% if user.profile_image.present? %>
@@ -11,7 +11,7 @@
       <%= link_to 'プロフィールを編集する', edit_user_path(user.id) %>
     </div>
     <div class="user-link">
-      <ul class="user-link-list">
+      <ul class>
         <li>
           <%= link_to "投稿レシピ", posted_users_path %>
         </li>

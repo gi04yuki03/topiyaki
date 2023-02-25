@@ -236,13 +236,23 @@ h1 {
     padding: 60px 0;
   }
 
-  .container {
-    padding: 0 20px;
+  /* 見出し */
+  h1 {
+    padding-bottom: 10px;
   }
 
   /* ヘッダー */
   .header .container {
     padding: 15px;
+  }
+
+  .header {
+    padding-left: 10px;
+  }
+
+  .container {
+    padding: 15px 0;
+    max-width: 700px!important;
   }
 
   .header-logo {
@@ -260,28 +270,6 @@ h1 {
 
   .gnav-item a:after {
     display: none;
-  }
-
-  /*  メインビジュアル */
-  .mv {
-    height: 75vh;
-  }
-
-  .mv-container {
-    padding: 0 20px;
-  }
-
-  .mv-title {
-    font-size: 30px;
-  }
-  .mv-subtitle {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-
-  .mv-text {
-    font-size: 14px;
-    line-height: 1.7;
   }
 
   /* Works */

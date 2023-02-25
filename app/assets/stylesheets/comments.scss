@@ -7,7 +7,7 @@
   width: 50%;
 }
 
-.coments-index {
+.comments-index {
   margin: 20px;
   width: 50%;
 }
@@ -52,4 +52,17 @@
 
 .comment-button {
   width: 20%;
+}
+
+/*media Queries 767
+----------------------------------------------------*/
+@media screen and (max-width: 767px) {
+  .comments {
+    flex-direction: column;
+  }
+  .comments-form, .comments-index {
+    margin: 0 15px;
+    width: auto;
+    padding-bottom: 20px;
+  }
 }

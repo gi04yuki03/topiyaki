@@ -1,27 +1,29 @@
 <div class="comments">
   <div class="comments-form">
     <%= form_with model:[@recipe, @comment], local: true do |f| %>
-      <p><%= f.text_area :text, :size=>"60x3",placeholder: "コメントする", class: "form-control" %></p>
+      <p><%= f.text_area :text, :size=>"60x3",placeholder: "コメントする(100文字以内)", class: "form-control" %></p>
       <%= f.submit "送信する", class: "btn btn-light" %>
     <% end %>
   </div>
-  <div class="coments-index">
+  <div class="comments-index">
     <p>コメント件数：<%= @recipe.comments.count %></p>
     <div class="comments-list">
       <% @comments.each do |comment| %>
-        <div class="comment-content">
-          <div class="comment-top">
-            <p class="comment-user"><%= comment.user.name %></p>
-            <p class="comment-date"><%= comment.created_at.strftime('%Y/%m/%d') %></p>
+        <div class="comment-box">
+          <div class="comment-content">
+            <div class="comment-top">
+              <p class="comment-user"><%= comment.user.name %></p>
+              <p class="comment-date"><%= comment.created_at.strftime('%Y/%m/%d') %></p>
+            </div>
+            <p class="comment-text"><%= comment.text %></p>
           </div>
-          <p class="comment-text"><%= comment.text %></p>
-        </div>
-        <div class="comment-button">
-        <% if comment.user == current_user %>
-          <p class="comment-delete">
+          <div class="comment-button">
+          <% if comment.user == current_user %>
+            <p class="comment-delete">
             <%= link_to "削除", recipe_comment_path(comment.recipe, comment), method: :delete, class: "btn-sm btn-light" %>
-          </p>
-        <% end %>
+            </p>
+          <% end %>
+          </div>
         </div>
       <% end %>
     </div>
