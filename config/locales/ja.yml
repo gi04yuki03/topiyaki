@@ -15,6 +15,7 @@ ja:
           email: メールアドレス
           profile_image: プロフィール画像
           password: パスワード
+          password_confirmation: パスワード(確認)
           profile: 自己紹介
         recipe:
           title: レシピ名
