@@ -13,4 +13,13 @@ class User < ApplicationRecord
   has_many :recipes
   has_many :favorites, dependent: :destroy
   has_many :comments , dependent: :destroy
+
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.password = user.password_confirmation
+      user.name = "ゲスト"
+      user.profile = "hello"
+    end
+  end
 end
