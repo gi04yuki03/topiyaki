@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     recipe = Recipe.find(params[:recipe_id])
     comment = current_user.comments.new(comment_params)
     comment.recipe_id = recipe.id
-    if comment.save!
+    if comment.save
       flash[:notice] = "コメントを投稿しました"
       redirect_to recipe_path(recipe)
     else

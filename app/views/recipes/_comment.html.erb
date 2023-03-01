@@ -1,9 +1,12 @@
 <div class="comments">
   <div class="comments-form">
-    <%= form_with model:[@recipe, @comment], local: true do |f| %>
-      <p><%= f.text_area :text, :size=>"60x3",placeholder: "コメントする(100文字以内)", class: "form-control" %></p>
-      <%= f.submit "送信する", class: "btn btn-light" %>
-    <% end %>
+    <% if user_signed_in? %>
+      <%= form_with model:[@recipe, @comment], local: true do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
+        <p><%= f.text_area :text, :size=>"60x3",placeholder: "コメントする(100文字以内)", class: "form-control" %></p>
+        <%= f.submit "送信する", class: "btn btn-light" %>
+      <% end %>
+    <%end%>
   </div>
   <div class="comments-index">
     <p>コメント件数：<%= @recipe.comments.count %></p>
