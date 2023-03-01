@@ -1,31 +1,41 @@
 <div class="notice"><%= flash[:notice] %></div>
 <div class="container">
   <h1 class="d-inline-block">レシピ一覧</h1>
-  <h3 class="d-inline-block ml-3"><%= @recipes.count %>件</h3>
+  <h3 class="d-inline-block ml-3"><%= @recipes.total_count %>件</h3>
   <div class="index-search d-inline-block ml-5">
     <%= form_with url: recipes_path, method: :get, local: true do |f| %>
       <%= f.text_field :procedure , placeholder:"今日のトッピングを探す" , class:"form-control search-form" %>
       <%= f.submit '探す', class: "btn btn-light form-button" %>
     <% end %>
   </div>
-  <ul class="recipes-list">
+  <ul class="index-recipes">
     <% @recipes.each do |recipe| %>
       <%= link_to recipe_path(recipe), class: 'recipes-item' do %>
-        <li class="list-preview">
-          <div>
+        <li class="index-list">
+          <div class="index-image">
             <% if recipe.image.present? %>
               <%= attachment_image_tag recipe, :image, format: 'jpeg', size: '200x200', class: 'list-image' %>
             <% else %>
               <%= image_tag 'no_image.jpg', size: '200x200', class: 'list-image' %>
             <% end %>
-          </div>
-          <div class="list-text">
-            <h3 class="recipe-name"><%= recipe.title %></h3>
-            <h5 class="recipe-info"><%= recipe.description %></h5>
+            <div class="index-list-inner">
+              <h3 class="index-title"><%= recipe.title %></h3>
+              <h5 class="index-description"><%= recipe.description %></h5>
+              <h5 class="index-ingredients">
+                <% recipe.ingredients.each do |ingredient|%>
+                  <%= ingredient.ingredient %> <%= ingredient.quantity %>　
+                <%end%>
+              </h5>
+              <div class="index-right">
+                <h6 class="index-favoritescount">♡<%= recipe.favorites.count %>　</h6>
+                <h6 class="index-commentscount">コメント：<%= recipe.comments.count %>件</h6>
+              </div>
+            </div>
           </div>
         </li>
       <% end %>
     <% end %>
-  </div>
+  </ul>
+  <%= paginate @recipes %>
 </div>
 <%= render "shared/expand_less" %>
