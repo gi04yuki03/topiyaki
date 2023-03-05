@@ -24,6 +24,6 @@ class Recipe < ApplicationRecord
   end
 
   def require_any_procedures
-    errors.add(:base, "手順は1つ以上登録してください。") if self.procedures.blank?
+    errors.add(:base, "作り方は1つ以上登録してください。") if self.procedures.blank?
   end
 end
