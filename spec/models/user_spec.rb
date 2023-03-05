@@ -21,7 +21,7 @@ RSpec.describe User, type: :model do
       user.valid?
       expect(user.errors.full_messages.first).to eq("ユーザー名は10文字以内で入力してください。")
     end
-    it "passwordは6文字未満であり、password_confirmationと一致しなければ登録できないこと" do
+    it "passwordは6文字未満、password_confirmationと一致しない場合には登録できないこと" do
       user = build(:user, password: '12345')
       user.valid?
       expect(user.errors.full_messages.first).to eq("パスワード(確認)とパスワードの入力が一致しません。")
