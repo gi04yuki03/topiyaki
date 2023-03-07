@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Recipeapp</title>
+    <title><%= page_title(yield(:title)) %></title>
+    <%= favicon_link_tag('favicon.png') %>
+    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name=”viewport” content=”width=device-width,initial-scale=1″>
