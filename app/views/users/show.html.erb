@@ -1,3 +1,4 @@
+<% content_for(:title, "#{@user.name}さんのマイページ") %>
 <div class="user-main">
   <%= render "users/user_menu", user: @user %>
   <div class="user-right">
@@ -31,4 +32,3 @@
     </div>
   </div>
 </div>
-<%= render "shared/expand_less" %>
