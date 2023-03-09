@@ -1,10 +1,10 @@
+<% content_for(:title, 'レシピ新規作成') %>
 <div class="container">
   <h1>新規レシピ投稿</h1>
     <%= form_with model: @recipe, local:true do |f| %>
     <div class="recipe-main">
       <%= render "shared/error_messages", object: f.object %>
       <%= render "recipes/new_table", f: f %>
-      <%= render "recipes/mobile_new_table", f: f %>
       <%= render "recipes/new_ingredients", f: f %>
       <%= render "recipes/new_procedures", f: f %>
     </div>

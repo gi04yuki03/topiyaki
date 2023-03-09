@@ -1,0 +1,32 @@
+<ul class="index-recipes">
+  <% @recipes.each do |recipe| %>
+    <%= link_to recipe_path(recipe), class: 'recipes-item' do %>
+      <li class="index-list">
+        <div class="index-image">
+          <% if recipe.image.present? %>
+            <%= attachment_image_tag recipe, :image, format: 'jpeg', class: 'list-image' %>
+          <% else %>
+            <%= image_tag 'no_image.jpg', class: 'list-image' %>
+          <% end %>
+        </div>
+        <div class="index-list-inner">
+          <div class="index-list-inner-top">
+            <h3 class="index-title"><%= recipe.title %></h3>
+            <h5 class="index-description"><%= recipe.description %></h5>
+            <h5 class="index-ingredients">
+              <% recipe.ingredients.each do |ingredient|%>
+                <%= ingredient.ingredient %> <%= ingredient.quantity %>　
+              <%end%>
+            </h5>
+            <div class="index-list-inner-bottom">
+              <div class="index-right">
+                <h6 class="index-favoritescount">♡<%= recipe.favorites.count %>　</h6>
+                <h6 class="index-commentscount">コメント：<%= recipe.comments.count %>件</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  <% end %>
+</ul>

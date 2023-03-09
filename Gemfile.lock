@@ -152,6 +152,7 @@ GEM
     mime-types-data (3.2022.0105)
     mini_magick (4.12.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.8.1)
     minitest (5.17.0)
     msgpack (1.6.0)
     mustermann (1.1.2)
@@ -169,7 +170,12 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.5.8)
+    nokogiri (1.14.1)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
     nokogiri (1.14.1-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.14.1-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     popper_js (1.16.1)
@@ -296,7 +302,10 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    sqlite3 (1.6.0)
+      mini_portile2 (~> 2.8.0)
     sqlite3 (1.6.0-arm64-darwin)
+    sqlite3 (1.6.0-x86_64-linux)
     thor (1.2.1)
     thread_safe (0.3.6)
     tilt (2.0.11)
@@ -328,6 +337,8 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  ruby
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
