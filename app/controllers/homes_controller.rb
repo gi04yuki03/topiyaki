@@ -1,6 +1,13 @@
 class HomesController < ApplicationController
   def top
+    @q = Recipe.ransack(params[:q])
+    if params[:q].present?
+      @recipes = @q.result(distinct: true).paginate(page: params[:page]).reverse_order
+    else
+      @recipes = Recipe.all.paginate(page: params[:page]).reverse_order
+    end
   end
+  
   def guest_sign_in
     user = User.find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
