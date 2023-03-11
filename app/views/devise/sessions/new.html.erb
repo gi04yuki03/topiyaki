@@ -1,8 +1,12 @@
 <div class="box">
   <div class="box2">
     <div class="box-inner">
-      <%= form_with model: @user, url: user_session_path, local: true do |f| %>
-        <%= render "devise/shared/error_messages", resource: @user %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <% if flash[:alert] %>
+    <div class="alert alert-danger">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
         <h4>ログイン</h4>
         <div class="box-email">
           <%= f.label :email, "メールアドレス" %><br />
