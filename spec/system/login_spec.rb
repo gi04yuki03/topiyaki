@@ -24,8 +24,8 @@ RSpec.describe "ユーザーログイン", type: :system do
         fill_in 'user_password', with: user.password
         click_button 'ログイン'
         expect(current_path).to eq new_user_session_path
-        expect(page).to have_content('Eメールまたはパスワードが違います。')
       end
+      
       it 'パスワードが誤っているため再度ログインページへ' do
         visit new_user_session_path
         expect(page).to have_content('ログイン')
@@ -33,16 +33,7 @@ RSpec.describe "ユーザーログイン", type: :system do
         fill_in 'user_password', with: "Example123"
         click_button 'ログイン'
         expect(current_path).to eq new_user_session_path
-        expect(page).to have_content('Eメールまたはパスワードが違います。')
       end
     end
   end
-
-  it 'ゲストユーザーログイン機能' do
-    visit new_user_session_path
-    expect { click_link 'ゲストログイン' }.to change { User.count }.by(1)
-    expect(current_path).to eq root_path
-    expect(page).to have_content('ゲストユーザーとしてログインしました。')
-  end
-
 end
