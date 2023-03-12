@@ -17,10 +17,10 @@ RSpec.describe "ユーザー編集", type: :system do
         within(".user-right") do
           click_link 'プロフィールを編集する'
         end
-        expect(current_path).to eq edit_user_path(user.id)     
+        expect(current_path).to eq edit_user_path(user.id)
         fill_in 'user_name', with: 'Sample'
         fill_in 'user_profile', with: "Sample_profile"
-        attach_file 'user_profile_image', "#{Rails.root}/test/fixtures/yakisoba.png", make_visible: true
+        attach_file 'user_profile_image', Rails.root.join('test/fixtures/yakisoba.png'), make_visible: true
         click_button '更新'
         expect(current_path).to eq user_path(user.id)
         expect(page).to have_content('ユーザー情報を更新しました')
@@ -59,7 +59,7 @@ RSpec.describe "ユーザー編集", type: :system do
           FactoryBot.create(:recipe, :with_ingredients, :with_procedures, title: "posted_recipe_#{i}", user: user)
         end
       end
-            
+
       it '詳細ページに3件まで表示できること' do
         visit user_path(user.id)
         within(".user-posted") do
@@ -69,13 +69,13 @@ RSpec.describe "ユーザー編集", type: :system do
         end
       end
 
-      it 'もっと見るを押すと正しく全件が表示されること' , js: true do
+      it 'もっと見るを押すと正しく全件が表示されること', js: true do
         visit user_path(user.id)
         click_link 'もっと見る'
         expect(current_path).to eq posted_users_path
         expect(page).to have_selector('.index-list', count: 4)
         expect(page).to have_content('posted_recipe_1')
-      end 
+      end
     end
   end
 

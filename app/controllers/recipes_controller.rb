@@ -1,17 +1,27 @@
 class RecipesController < ApplicationController
   def index
     @q = Recipe.ransack(params[:q])
-    if params[:q].present?
-      @recipes = @q.result(distinct: true).paginate(page: params[:page], per_page: 10).reverse_order
-    else
-      @recipes = Recipe.all.paginate(page: params[:page], per_page: 10).reverse_order
-    end
+    @recipes = if params[:q].present?
+                 @q.result(distinct: true).paginate(page: params[:page], per_page: 10).reverse_order
+               else
+                 Recipe.all.paginate(page: params[:page], per_page: 10).reverse_order
+               end
+  end
+
+  def show
+    @recipe = Recipe.find(params[:id])
+    @comment = Comment.new
+    @comments = @recipe.comments
   end
 
   def new
     @recipe = Recipe.new
     @ringredients = @recipe.ingredients.build
     @procedures = @recipe.procedures.build
+  end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
   end
 
   def create
@@ -21,16 +31,6 @@ class RecipesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
-    @recipe = Recipe.find(params[:id])
-    @comment = Comment.new
-    @comments = @recipe.comments
-  end
-
-  def edit
-    @recipe = Recipe.find(params[:id])
   end
 
   def update
@@ -50,10 +50,11 @@ class RecipesController < ApplicationController
   end
 
   private
+
   def recipe_params
     params.require(:recipe).permit(:title, :description, :image,
-      ingredients_attributes: [:id, :ingredient, :quantity, :_destroy],
-      procedures_attributes:  [:id, :procedure, :_destroy])
-      .merge(user_id:current_user.id)
+                                   ingredients_attributes: [:id, :ingredient, :quantity, :_destroy],
+                                   procedures_attributes: [:id, :procedure, :_destroy])
+      .merge(user_id: current_user.id)
   end
 end

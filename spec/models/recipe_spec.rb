@@ -12,13 +12,13 @@ RSpec.describe Recipe, type: :model do
 
       expect(recipe.title).to eq('テストタイトル')
       expect(recipe.description).to eq('テストディスクリプション')
-      expect{recipe.ingredients << ingredient}.to change{recipe.ingredients.to_a}.from([]).to([ingredient])
-      expect{recipe.procedures << procedure}.to change{recipe.procedures.to_a}.from([]).to([procedure])
+      expect { recipe.ingredients << ingredient }.to change { recipe.ingredients.to_a }.from([]).to([ingredient])
+      expect { recipe.procedures << procedure }.to change { recipe.procedures.to_a }.from([]).to([procedure])
 
       expect(recipe).to be_valid
     end
   end
-  
+
   describe "異常系" do
     context "必須入力であること" do
       it "レシピのタイトルと説明は必須であること" do

@@ -1,4 +1,4 @@
-  # frozen_string_literal: true
+# frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
   def create
@@ -24,14 +24,15 @@ class Users::SessionsController < Devise::SessionsController
   def require_no_authentication
     assert_is_devise_resource!
     return unless is_navigational_format?
+
     no_input = devise_mapping.no_input_strategies
 
     authenticated = if no_input.present?
-      args = no_input.dup.push scope: resource_name
-      warden.authenticate?(*args)
-    else
-      warden.authenticated?(resource_name)
-    end
+                      args = no_input.dup.push scope: resource_name
+                      warden.authenticate?(*args)
+                    else
+                      warden.authenticated?(resource_name)
+                    end
 
     if authenticated && resource = warden.user(resource_name)
       flash[:alert] = "すでにログインしています。"
