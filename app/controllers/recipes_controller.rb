@@ -2,9 +2,9 @@ class RecipesController < ApplicationController
   def index
     @q = Recipe.ransack(params[:q])
     if params[:q].present?
-      @recipes = @q.result(distinct: true).paginate(page: params[:page]).reverse_order
+      @recipes = @q.result(distinct: true).paginate(page: params[:page], per_page: 10).reverse_order
     else
-      @recipes = Recipe.all.paginate(page: params[:page]).reverse_order
+      @recipes = Recipe.all.paginate(page: params[:page], per_page: 10).reverse_order
     end
   end
 
