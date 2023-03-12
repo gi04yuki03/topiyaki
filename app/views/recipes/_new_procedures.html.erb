@@ -1,7 +1,7 @@
 <section class="procedure-section">
   <div class="procedure-title">作り方</div>
   <div>
-    <%= f.fields_for :procedures do |ff| %>
+    <%= f.fields_for :procedures, wrapper: false, reject_if: :all_blank do |ff| %>
       <%= render "recipes/procedure_fields", f: ff %>
     <% end %>
   </div>
@@ -9,5 +9,5 @@
   <%= link_to_add_association "作り方の追加", f, :procedures,
     class: "btn btn-light add-btn", data: {
     association_insertion_node: '#detail-association-insertion2',
-    association_insertion_method: 'append' } %>
+    association_insertion_method: 'append' }, skip_validation: true %>
 </section>
