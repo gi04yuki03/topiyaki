@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   resources :users, only:[:show, :edit, :update, :destroy] do
     collection do
       get 'posted'
+      get 'favorites'
     end
-    get :favorites, on: :collection
   end
   post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
   devise_scope :user do
