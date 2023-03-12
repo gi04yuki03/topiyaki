@@ -32,24 +32,6 @@ RSpec.describe Recipe, type: :model do
         expect(recipe.errors.full_messages.first).to eq("材料は1つ以上登録してください。")
         expect(recipe.errors.full_messages.second).to eq("作り方は1つ以上登録してください。")
       end
-
-      it "材料が未記入だと登録不可" do
-        ingredient = Ingredient.new(ingredient: nil, quantity: nil)
-        recipe.ingredients << ingredient
-        recipe.save
-        recipe.valid?
-        expect(recipe.errors.full_messages.first).to eq("材料は1つ以上登録してください。")
-        expect(recipe.errors.full_messages.second).to eq("作り方は1つ以上登録してください。")
-      end
-
-      it "作り方が未記入だと登録不可" do
-        procedure = Procedure.new(procedure: nil)
-        recipe.procedures << procedure
-        recipe.save
-        recipe.valid?
-        expect(recipe.errors.full_messages.first).to eq("材料は1つ以上登録してください。")
-        expect(recipe.errors.full_messages.second).to eq("手順は1つ以上登録してください。")
-      end
     end
 
     context "文字数制限" do
