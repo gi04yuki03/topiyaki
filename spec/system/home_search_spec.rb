@@ -18,7 +18,7 @@ RSpec.describe "トップページからの検索機能", type: :system do
       find('.search-icon').click
       expect(page).to have_content '0件'
       expect(page).not_to have_content posted_recipe.title
-    end 
+    end
   end
 
   context '検索内容が入力されていない' do

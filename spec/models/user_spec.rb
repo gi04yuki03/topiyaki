@@ -17,7 +17,7 @@ RSpec.describe User, type: :model do
       end
     end
     it "nameが11文字以上であれば登録できないこと" do
-      user = build(:user, name: '1234567891011' )
+      user = build(:user, name: '1234567891011')
       user.valid?
       expect(user.errors.full_messages.first).to eq("ユーザー名は10文字以内で入力してください。")
     end

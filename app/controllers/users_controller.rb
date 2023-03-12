@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @posts_recipes = @user.recipes.order(created_at: :desc).limit(3)
     @favorites = @user.favorites.order(created_at: :desc).limit(3)
   end
-  
+
   def edit
     @user = User.find(params[:id])
   end

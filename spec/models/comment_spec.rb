@@ -4,7 +4,7 @@ RSpec.describe Comment, type: :model do
   let(:user) { create(:user) }
   let(:recipe) { create(:recipe, :with_ingredients, :with_procedures, user_id: user.id) }
   let(:comment) { build(:comment, recipe_id: recipe.id, user_id: user.id) }
-  
+
   describe "正常系" do
     it '正しくコメントを投稿できること' do
       comment.valid?
@@ -30,4 +30,3 @@ RSpec.describe Comment, type: :model do
     end
   end
 end
-

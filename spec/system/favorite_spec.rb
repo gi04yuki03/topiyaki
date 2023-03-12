@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "レシピお気に入り機能", type: :system, js:true do
+RSpec.describe "レシピお気に入り機能", type: :system, js: true do
   let(:user) { create(:user) }
   let(:other_user) { create(:other_user) }
   let!(:recipe) { create(:recipe, :with_ingredients, :with_procedures, user_id: other_user.id) }
-  let(:favorite) { user.favorites.create(recipe_id: recipe.id)}
+  let(:favorite) { user.favorites.create(recipe_id: recipe.id) }
   let!(:other_recipe) { create(:recipe, :with_ingredients, :with_procedures, user: other_user) }
   let(:destroy_favorite) { user.favorites.find_by(recipe_id: recipe.id).destroy }
 

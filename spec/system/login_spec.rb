@@ -25,7 +25,7 @@ RSpec.describe "ユーザーログイン", type: :system do
         click_button 'ログイン'
         expect(current_path).to eq new_user_session_path
       end
-      
+
       it 'パスワードが誤っているため再度ログインページへ' do
         visit new_user_session_path
         expect(page).to have_content('ログイン')
