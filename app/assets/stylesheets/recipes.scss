@@ -2,11 +2,12 @@
  recipes/index
 ---------------------------------*/
 .index-search {
-  text-align: right;
+  margin: 0 0 0 auto;
 }
 
 .recipe-search {
   display: inline-block!important;
+  text-align: right;
 }
 
 .index-recipes {
@@ -67,7 +68,6 @@
 
 .index-title h3 {
   font-weight: bold;
-  font-family: "Arial", "メイリオ";
 }
 
 .index-description {
@@ -277,15 +277,18 @@
   }
 
   .index-list-inner-top h3 {
-    font-size: 20px;
+    font-size: 21px;
   }
 
   .index-list-inner-top h5 {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .index-list-inner .index-right {
     margin-left: -15px;
+  }
+  .index-right h6 {
+    font-size: 13px;
   }
 
   /* recipes/show */

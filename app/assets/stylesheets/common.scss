@@ -1,5 +1,5 @@
 body {
-  font-family: "Montserrat","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif!important;
   font-size: 15px;
   letter-spacing: .05em;
   color: #333;
@@ -55,9 +55,9 @@ ul {
   background-color: #f7f7f7;
 }
 
-.container {
+.recipe-container {
   min-height: 85vh;
-  max-width: 1340px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 15px 40px;
 }
@@ -223,7 +223,16 @@ h1 {
   margin: 10px;
 }
 
+/*media Queries 992
+----------------------------------------------------*/
+@media screen and (max-width: 992px) {
+  .recipe-container {
+    margin: 0 auto;
+    max-width: 850px;
+    padding: 15px 10px;
+  }
 
+}
 
 /*media Queries 767
 ----------------------------------------------------*/
@@ -275,9 +284,8 @@ h1 {
     padding-left: 10px;
   }
 
-  .container {
-    padding: 15px 0;
-    max-width: 700px!important;
+  .recipe-container {
+    max-width: 720px;
   }
 
   .header-logo {
@@ -382,5 +390,14 @@ h1 {
     font-size: 14px;
     line-height: 1.7;
     margin-bottom: 20px;
+  }
+}
+
+
+/*media Queries 576
+----------------------------------------------------*/
+@media screen and (max-width: 576px) {
+  .recipe-container {
+    width: 100%;
   }
 }
