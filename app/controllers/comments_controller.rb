@@ -1,15 +1,15 @@
 class CommentsController < ApplicationController
   def create
-    recipe = Recipe.find(params[:recipe_id])
-    comment = current_user.comments.new(comment_params)
-    comment.recipe_id = recipe.id
-    if comment.save
-      flash[:notice] = "コメントを投稿しました"
-      redirect_to recipe_path(recipe)
+    @recipe = Recipe.find(params[:recipe_id])
+    @comment = Comment.new(comment_params)
+    @comment.recipe_id = @recipe.id
+    if @comment.save
+      redirect_to recipe_path(@recipe), notice: "コメントを投稿しました"
     else
-      redirect_to recipe_path(recipe)    
+      flash.now[:alert] = "コメントの投稿に失敗しました"
+      @comments = @recipe.comments
+      render 'recipes/show'
     end
-    
   end
 
   def destroy
@@ -21,6 +21,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:text)
+    params.require(:comment).permit(:text).merge(user_id: current_user.id)
   end
 end
