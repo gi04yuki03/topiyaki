@@ -22,6 +22,7 @@
   <body>
     <div class="wrapper">
       <%= render "shared/header" %>
+      <div class="notice"><%= flash[:notice] %></div>
         <%= yield %>
       <%= render "shared/footer" %>
     </div>

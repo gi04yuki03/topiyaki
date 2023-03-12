@@ -1,6 +1,5 @@
 <% content_for(:title, @recipe.title) %>
 <div class="recipe-container ">
-  <div class="notice"><%= flash[:notice] %></div>
   <h1><%= @recipe.title %></h1>
   <% if @recipe.user == current_user %>
     <%= link_to '編集する', edit_recipe_path(@recipe.id), class: "show-font-light" %>
