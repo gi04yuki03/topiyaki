@@ -21,13 +21,13 @@ class UsersController < ApplicationController
 
   def posted
     @user = current_user
-    @recipes = @user.recipes
+    @recipes = @user.recipes.reverse_order
   end
 
   def favorites
     @user = current_user
     favorites = Favorite.where(user_id: @user.id).pluck(:recipe_id)
-    @recipes = Recipe.find(favorites)
+    @recipes = Recipe.find(favorites).reverse
   end
 
   def destroy

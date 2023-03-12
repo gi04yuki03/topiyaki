@@ -5,9 +5,13 @@ class Recipe < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :comments , dependent: :destroy
   has_many :ingredients, dependent: :destroy
-  accepts_nested_attributes_for :ingredients, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :ingredients,
+                                reject_if: proc { |attributes| attributes['ingredient'].blank? && attributes['quantity'].blank? },
+                                allow_destroy: true
   has_many :procedures, dependent: :destroy
-  accepts_nested_attributes_for :procedures, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :procedures,
+                                reject_if: proc { |attributes| attributes['procedure'].blank? },
+                                allow_destroy: true
 
   validates :user_id, presence: true
   validates :title, presence: true, length: { maximum: 30 }
@@ -20,10 +24,10 @@ class Recipe < ApplicationRecord
   end
 
   def require_any_ingredients
-    errors.add(:base, "材料は1つ以上登録してください。") if self.ingredients.blank?
+    errors.add(:base, "材料は1つ以上登録してください。") if self.ingredients.reject(&:marked_for_destruction?).empty?
   end
 
   def require_any_procedures
-    errors.add(:base, "作り方は1つ以上登録してください。") if self.procedures.blank?
+    errors.add(:base, "作り方は1つ以上登録してください。") if self.procedures.reject(&:marked_for_destruction?).empty?
   end
 end

@@ -21,6 +21,8 @@ ja:
           title: レシピ名
           image: 写真
           description: 一言
+        comment:
+          text: コメント
   attributes:
     created_at: 作成日
     updated_at: 更新日

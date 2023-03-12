@@ -17,7 +17,7 @@ RSpec.describe Comment, type: :model do
       it '未入力の場合はコメントを投稿ができないこと' do
         comment = build(:comment, text: nil)
         comment.valid?
-        expect(comment.text).not_to eq('コメントです')
+        expect(comment.errors[:text]).to include("を入力してください。")
       end
     end
 
@@ -25,7 +25,7 @@ RSpec.describe Comment, type: :model do
       it "101文字以上の場合はコメントを投稿ができないこと" do
         comment = build(:comment, text: "a" * 101)
         comment.valid?
-        expect(comment.text).not_to eq("a" * 101)
+        expect(comment.errors[:text]).to include("は100文字以内で入力してください。")
       end
     end
   end

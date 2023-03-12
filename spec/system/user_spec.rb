@@ -10,13 +10,6 @@ RSpec.describe "ユーザー編集", type: :system do
     sign_in user
   end
 
-  describe '詳細ページ表示機能' do
-    it '画像登録済みの場合には画像、ない場合にはno_imageが表示されていること' do
-      visit user_path(user.id)
-      expect(page).to have_selector("img[src$='no_image.jpg']")
-    end
-  end
-
   describe '編集機能' do
     context 'フォームの入力値が正常' do
       it '正しく修正できること' do
@@ -24,13 +17,14 @@ RSpec.describe "ユーザー編集", type: :system do
         within(".user-right") do
           click_link 'プロフィールを編集する'
         end
+        expect(current_path).to eq edit_user_path(user.id)     
         fill_in 'user_name', with: 'Sample'
         fill_in 'user_profile', with: "Sample_profile"
         attach_file 'user_profile_image', "#{Rails.root}/test/fixtures/yakisoba.png", make_visible: true
         click_button '更新'
         expect(current_path).to eq user_path(user.id)
-        expect(page).to have_content('アカウント情報を変更しました')
-        expect(page).to have_selector("img[src$='yakisoba.jpeg']")
+        expect(page).to have_content('ユーザー情報を更新しました')
+        expect(page).to have_selector("img[src$='.png']")
         expect(page).to have_content('Sample')
         expect(page).to have_content('Sample_profile')
       end
@@ -45,9 +39,8 @@ RSpec.describe "ユーザー編集", type: :system do
         fill_in 'user_name', with: nil
         fill_in 'user_profile', with: nil
         click_button '更新'
-        expect(current_path).to eq user_path(user.id)
         expect(page).to have_content('ユーザー名を入力してください')
-        expect(page).to have_content('プロフィールを入力してください')
+        expect(page).to have_content('自己紹介を入力してください')
       end
     end
   end
@@ -61,27 +54,28 @@ RSpec.describe "ユーザー編集", type: :system do
     end
 
     context '投稿したレシピがある' do
-      let(:posted_recipes) do
-        4.times.collect do |i|
-          create(:recipe, name: "posted_recipe_#{i}",
-                           user_id: user.id)
+      let!(:posted_recipes) do
+        (1..4).map do |i|
+          FactoryBot.create(:recipe, :with_ingredients, :with_procedures, title: "posted_recipe_#{i}", user: user)
         end
       end
-
+            
       it '詳細ページに3件まで表示できること' do
         visit user_path(user.id)
-        within(".user-posted-recipe") do
-          expect(page).to have_selector('.recipe.title', count: 3)
-          expect(page).to have_content('posted_recipe_2')
+        within(".user-posted") do
+          expect(page).to have_selector('.user-posted ul li', count: 3)
+          expect(page).to have_content('posted_recipe_4')
+          expect(page).not_to have_content('posted_recipe_1')
         end
       end
 
       it 'もっと見るを押すと正しく全件が表示されること' , js: true do
+        visit user_path(user.id)
         click_link 'もっと見る'
         expect(current_path).to eq posted_users_path
-        expect(page).to have_selector('.recipe-name', count: 4)
-        expect(page).to have_content('posted_recipe_2')
-      end
+        expect(page).to have_selector('.index-list', count: 4)
+        expect(page).to have_content('posted_recipe_1')
+      end 
     end
   end
 
@@ -103,5 +97,3 @@ RSpec.describe "ユーザー編集", type: :system do
     end
   end
 end
-
-

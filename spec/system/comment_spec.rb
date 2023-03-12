@@ -12,6 +12,22 @@ RSpec.describe Comment, type: :system do
   end
 
   describe 'コメント投稿機能' do
+    context '投稿内容が異常の場合' do
+      it '未入力の場合は投稿されないこと' do
+        visit recipe_path(recipe)
+        expect(page).to have_content(recipe.title)
+        fill_in 'comment_text', with: ''
+        click_button '送信する'
+        expect(page).to have_content("コメントを入力してください")
+      end
+
+      it '101文字異常の場合は投稿されないこと' do
+        visit recipe_path(recipe)
+        fill_in "comment_text", with: "a" * 101
+        click_button '送信する'
+        expect(page).to have_content("コメントは100文字以内で入力してください。")
+      end
+    end
     context '正しい投稿内容の場合'do
       it '正常に登録されること' do
         visit recipe_path(recipe)
@@ -20,24 +36,6 @@ RSpec.describe Comment, type: :system do
         expect(current_path). to eq recipe_path(recipe)
         expect(page).to have_content("コメントを投稿しました")
         expect(page).to have_content(comment.text)
-      end
-    end
-
-    context '投稿内容が異常の場合' do
-      it '未入力の場合は投稿されないこと' do
-        visit recipe_path(recipe)
-        fill_in "comment_text", with: nil
-        click_button '送信する'
-        expect(current_path).to eq recipe_path(recipe)
-        expect(page).to have_no_content(nil)
-      end
-
-      it '101文字異常の場合は投稿されないこと' do
-        visit recipe_path(recipe)
-        fill_in "comment_text", with: "a" * 101
-        click_button '送信する'
-        expect(current_path).to eq recipe_path(recipe)
-        expect(page).to have_no_content("a" * 101)
       end
     end
   end

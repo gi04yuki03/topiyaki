@@ -3,9 +3,9 @@
   <div class="mv">
     <h1>YAKITOPI</h1><p>君の知らないやきそばがここにある</p>
     <div class="mv-part">
-      <%= form_with url: recipes_path, method: :get, local: true do |f| %>
-        <%= f.text_field :procedure , placeholder:"今日のトッピングを探す" , class:"form-control search-form" %>
-          <%= image_submit_tag("yakisoba.png", class: "search-icon") %>
+      <%= search_form_for @q, url: recipes_path, method: :get do |f| %>
+        <%= f.search_field:title_or_description_or_ingredients_ingredient_cont, placeholder:"今日のトッピングを探す", class:"form-control search-form" %>
+        <%= image_submit_tag("yakisoba.png", class: "search-icon") %>
       <% end %>
     </div>
     <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>

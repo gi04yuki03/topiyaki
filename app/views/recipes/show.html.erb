@@ -1,5 +1,5 @@
 <% content_for(:title, @recipe.title) %>
-<div class="container">
+<div class="recipe-container ">
   <div class="notice"><%= flash[:notice] %></div>
   <h1><%= @recipe.title %></h1>
   <% if @recipe.user == current_user %>

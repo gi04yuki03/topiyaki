@@ -1,11 +1,11 @@
 <% content_for(:title, 'レシピ一覧') %>
 <div class="notice"><%= flash[:notice] %></div>
-<div class="container">
+<div class="recipe-container ">
   <h1 class="d-inline-block">レシピ一覧</h1>
-  <h3 class="d-inline-block ml-3"><%= @recipes.total_count %>件</h3>
-  <div class="index-search d-inline-block ml-5">
-    <%= form_with url: recipes_path, method: :get, local: true do |f| %>
-      <div class="recipe-search"><%= f.text_field :ingredient , placeholder:"今日のトッピングを探す" , class:"form-control search-form" %></div>
+  <h3 class="d-inline-block ml-3"><%= @recipes.total_entries %>件</h3>
+  <div class="index-search d-inline-block">
+    <%= search_form_for @q do |f| %>　　
+      <div class="recipe-search"><%= f.search_field:title_or_description_or_ingredients_ingredient_cont, placeholder:"トッピングを探す", class:"form-control search-form" %></div>
       <div class="recipe-search"><%= f.submit '探す', class: "btn btn-light form-button recipe-search" %></div>
     <% end %>
   </div>

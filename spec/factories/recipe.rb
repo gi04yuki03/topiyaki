@@ -17,5 +17,7 @@ FactoryBot.define do
         recipe.procedures << procedure
       end
     end
+
+    factory :recipe_with_ingredients_and_procedures, traits: [:with_ingredients, :with_procedures]
   end
 end
