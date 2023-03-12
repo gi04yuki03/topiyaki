@@ -1,0 +1,74 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  SuggestExtensions: false
+  NewCops: enable
+  DisplayCopNames: true
+  Exclude:
+    - "Gemfile"
+    - "bin/**/*"
+    - "bin/*"
+    - "db/**/*"
+    - "log/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - "lib/tasks/auto_annotate_models.rake"
+    - "config/environments/*"
+    - "config/puma.rb"
+    - 'bin/yarn'
+    - 'db/schema.rb'
+    - 'node_modules/*****/****/***/**/*'
+    - 'node_modules/****/***/**/*'
+    - 'node_modules/***/**/*'
+
+
+Metrics:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+  # EnforcedStyle: brackets
+
+Style/WordArray:
+  Enabled: false
+
+Naming/VariableNumber:
+  Enabled: false
+
+Lint/AssignmentInCondition:
+  Enabled: false
+
+Naming/PredicateName:
+  Enabled: false
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+Rails/LexicallyScopedActionFilter:
+  Enabled: false
