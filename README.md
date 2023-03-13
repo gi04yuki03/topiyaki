@@ -1,24 +1,43 @@
-# README
+# YAKITOPI
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
+**TAKITOPIはやきそばトッピングレシピ投稿アプリです。**
 
-Things you may want to cover:
+自分が好きな*カップやきそばをもっとみなさんに好きになってもらいたい*という思いで作成しました。
 
-* Ruby version
+- カップやきそばに特化したニッチさで*興味を持ってもらうきっかけを作る*
+- 気軽に試せる*トッピング*を紹介して*食べてもらう機会を増やす*
+- カップやきそばが好きな方も*新しい楽しみ方と出会って*さらに好きになる
 
-* System dependencies
+見たら気軽に試してみたくなる、そんな操作もレシピもわかりやすいアプリを目指しました。
 
-* Configuration
+## 使用技術
+- Ruby 2.7.4
+- Ruby on Rails 6.1.4.4
+- PostgreSQL 13.4
+- Devise 4.8.0
+- RSpec 3.10.0
+- FactoryBot 6.2.0
+- Shoulda Matchers 4.5.1
+- jQuery 3.6.0
 
-* Database creation
+## 使用イメージ
+### ①レシピ登録
 
-* Database initialization
+### ②レシピ検索
 
-* How to run the test suite
+### ③ゲストログイン
 
-* Services (job queues, cache servers, search engines, etc.)
+## 機能
+- レシピ登録/編集/削除
+- レシピ検索
+- コメント投稿/削除
+- お気に入り
+- ユーザー新規登録/ログイン/ログアウト/削除
+- マイページ/編集
 
-* Deployment instructions
+## 今後実装したいもの
+- タグ検索機能
+- 並び替え
+- 手順ごとに画像挿入
 
-* ...
