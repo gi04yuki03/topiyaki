@@ -2,11 +2,11 @@
 <html>
   <head>
     <title><%= page_title(yield(:title)) %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <%= favicon_link_tag('favicon.png') %>
     <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name=”viewport” content=”width=device-width,initial-scale=1″>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- drawer.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css">
