@@ -28,12 +28,12 @@
 ![newpage](https://user-images.githubusercontent.com/113294968/225369226-0484137e-15f9-45f4-b28a-d2a3e55daef2.png)
 
 ### ②レシピ一覧
-##### 検索機能
+□検索機能
 ![indexpage](https://user-images.githubusercontent.com/113294968/225369234-a200ffdf-7fe5-4682-a5de-1a998edc686d.png)
 
 ### ③レシピ詳細
-##### お気に入り機能
-##### コメント機能
+□お気に入り機能
+□コメント機能
 ![showpage](https://user-images.githubusercontent.com/113294968/225369152-033b1824-84df-4aab-9498-14a0af1a192e.png)
 
 ## 機能一覧
