@@ -1,15 +1,15 @@
 # YAKITOPI
 
-![alt text](images/toppage.png)
+![toppage](https://user-images.githubusercontent.com/113294968/225369174-a3d16a55-b0c4-4e14-b659-e5c074bd922c.png)
 
 ## 概要
 **TAKITOPIはやきそばトッピングレシピ投稿アプリです。**
 
 自分が好きな**カップやきそばをもっとみなさんに好きになってもらいたい**という思いで作成しました。
 
-- カップやきそばに特化したニッチさで**興味を持ってもらうきっかけを作る**
-- 気軽に試せる**トッピング**を紹介して**食べてもらう機会を増やす**
-- カップやきそばが好きな方も**新しい楽しみ方と出会って**さらに好きになる
+☆カップやきそばに特化したニッチさで**興味を持ってもらうきっかけを作る**
+☆気軽に試せる**トッピング**を紹介して**食べてもらう機会を増やす**
+☆カップやきそばが好きな方も**新しい楽しみ方と出会って**さらに好きになる
 
 ✅見たら気軽に試してみたくなる、そんな操作もレシピもわかりやすいアプリを目指しました。
 
@@ -25,16 +25,16 @@
 
 ## 使用イメージ
 ### ①レシピ登録
-![alt text](images/newpage.png)
+![newpage](https://user-images.githubusercontent.com/113294968/225369226-0484137e-15f9-45f4-b28a-d2a3e55daef2.png)
 
 ### ②レシピ一覧
-- 検索機能
-![alt text](images/indexpage.png)
+#####- 検索機能
+![indexpage](https://user-images.githubusercontent.com/113294968/225369234-a200ffdf-7fe5-4682-a5de-1a998edc686d.png)
 
 ### ③レシピ詳細
-- お気に入り機能
-- コメント機能
-![alt text](images/showpage.png)
+#####- お気に入り機能
+#####- コメント機能
+![showpage](https://user-images.githubusercontent.com/113294968/225369152-033b1824-84df-4aab-9498-14a0af1a192e.png)
 
 ## 機能一覧
 - レシピ登録/編集/削除
