@@ -1,6 +1,6 @@
 # YAKITOPI
 
-![toppage](https://user-images.githubusercontent.com/113294968/225369174-a3d16a55-b0c4-4e14-b659-e5c074bd922c.png)
+<img src="https://user-images.githubusercontent.com/113294968/227779413-56b75a5c-d95d-471c-91fb-b66d1839748d.png" alt="toppage" style="max-width: 100%; height: auto;">
 
 ## 概要
 **TAKITOPIはやきそばトッピングレシピ投稿アプリです。**
