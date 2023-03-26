@@ -1,6 +1,6 @@
 # YAKITOPI
 
-<div style="width: 500px;">
+<div style="width: 500px; height: auto;">
   <img src="https://user-images.githubusercontent.com/113294968/227779413-56b75a5c-d95d-471c-91fb-b66d1839748d.png" alt="toppage" style="max-width: 100%; height: auto;">
 </div>
 
@@ -29,14 +29,14 @@
 ## 使用イメージ
 ### ①レシピ登録
 
-<div style="width: 500px;">
+<div style="width: 500px; height: auto;">
   <img src="https://user-images.githubusercontent.com/113294968/225369226-0484137e-15f9-45f4-b28a-d2a3e55daef2.png" alt="newpage" style="max-width: 100%;     height: auto;">
 </div>
 
 ### ②レシピ一覧
 □検索機能
 
-<div style="width: 500px;">
+<div style="width: 500px; height: auto;">
   <img src="https://user-images.githubusercontent.com/113294968/225369234-a200ffdf-7fe5-4682-a5de-1a998edc686d.png" alt="indexpage" style="max-width: 100%;     height: auto;">
 </div>
 
@@ -44,7 +44,7 @@
 □お気に入り機能
 □コメント機能
 
-<div style="width: 500px;">
+<div style="width: 500px; height: auto;">
   <img src="https://user-images.githubusercontent.com/113294968/225369152-033b1824-84df-4aab-9498-14a0af1a192e.png" alt="showpage" style="max-width: 100%;     height: auto;">
 </div>
 
