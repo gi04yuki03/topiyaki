@@ -49,7 +49,7 @@
 □RSpec
 ![showpage](https://user-images.githubusercontent.com/113294968/227778744-3637781b-cc35-4790-97da-6bd805d5e99b.png)
 □rubocop
-![showpage](https://user-images.githubusercontent.com/113294968/227778823-a6310a6a-0041-4e2e-a704-21bfd342a32d.png)
+<img width="301" src="https://user-images.githubusercontent.com/113294968/227778823-a6310a6a-0041-4e2e-a704-21bfd342a32d.png">
 
 ## 今後実装したいもの
 - タグ検索機能
