@@ -48,6 +48,7 @@
 ## テスト
 □RSpec<br>
 <img width="522" src="https://user-images.githubusercontent.com/113294968/227779145-9a3bd6c7-bf71-497d-bc02-ba021307655c.png">
+
 □rubocop<br>
 <img width="301" src="https://user-images.githubusercontent.com/113294968/227778823-a6310a6a-0041-4e2e-a704-21bfd342a32d.png">
 
