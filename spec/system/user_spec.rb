@@ -82,6 +82,9 @@ RSpec.describe "ユーザー編集", type: :system do
   describe 'ゲストログイン機能' do
     it 'ゲストユーザーとしてログインできること' do
       visit root_path
+      expect(page).not_to have_content('ゲストログイン（閲覧用）')
+      click_link "ログアウト"
+      visit root_path
       click_link 'ゲストログイン（閲覧用）'
       visit user_path(guest_user.id)
     end
